@@ -23,11 +23,11 @@ npm start
 ### Contributors
 ------------
 <div style="display: flex;justify-content: center;">
-        <a href="https://github.com/ipuppyyt" target="_blank" rel="noopener noreferrer"></a><img style="height: 50px;border-radius: 25px;" src="https://avatars.githubusercontent.com/u/71689062?v=4"></a>
-        <a href="https://github.com/abhisheknobi" target="_blank" rel="noopener noreferrer"></a><img style="height: 50px;border-radius: 25px;" src="https://avatars.githubusercontent.com/u/115533725?v=4"></a>
-        <a href="https://github.com/alka5ceekay" target="_blank" rel="noopener noreferrer"></a><img style="height: 50px;border-radius: 25px;" src="https://avatars.githubusercontent.com/u/132563153?v=4"></a>
-        <a href="https://github.com/Aparna-Uday" target="_blank" rel="noopener noreferrer"></a><img style="height: 50px;border-radius: 25px;" src="https://avatars.githubusercontent.com/u/132563213?v=4"></a>
-        <a href="https://github.com/Nandhananj" target="_blank" rel="noopener noreferrer"></a><img style="height: 50px;border-radius: 25px;" src="https://avatars.githubusercontent.com/u/98000455?v=4"></a> 
+        <a href="https://github.com/ipuppyyt" target="_blank" rel="noopener noreferrer"></a><img style="height: 50px;border-radius: 25px;" src="https://avatars.githubusercontent.com/u/71689062?v=4" title="iPuppyYT"></a>
+        <a href="https://github.com/abhisheknobi" target="_blank" rel="noopener noreferrer"></a><img style="height: 50px;border-radius: 25px;" src="https://avatars.githubusercontent.com/u/115533725?v=4" title="Abhishek Nobi"></a>
+        <a href="https://github.com/alka5ceekay" target="_blank" rel="noopener noreferrer"></a><img style="height: 50px;border-radius: 25px;" src="https://avatars.githubusercontent.com/u/132563153?v=4" title="Alka Ceekay"></a>
+        <a href="https://github.com/Aparna-Uday" target="_blank" rel="noopener noreferrer"></a><img style="height: 50px;border-radius: 25px;" src="https://avatars.githubusercontent.com/u/132563213?v=4" title="Aparna Uday"></a>
+        <a href="https://github.com/Nandhananj" target="_blank" rel="noopener noreferrer"></a><img style="height: 50px;border-radius: 25px;" src="https://avatars.githubusercontent.com/u/98000455?v=4" title="Nandhana N J"></a> 
     </div>
     
 ### Contributing

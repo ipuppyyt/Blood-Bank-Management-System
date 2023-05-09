@@ -3,7 +3,14 @@
 ### Installation
 ------------
 ###### Use the package manager [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) to install all prerequisites.
-###### Run ```npm install```  or ```npm i```
+###### Run 
+```
+npm install
+```  
+###### or 
+```
+npm i
+```
 ### Execution
 ------------
 ######

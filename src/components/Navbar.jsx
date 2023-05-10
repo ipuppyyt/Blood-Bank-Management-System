@@ -4,14 +4,7 @@ import { Avatar } from "@mui/material";
 
 const Navbar = () => {
 
-  // const [age, setAge] = React.useState("");
-  // const handleChange = (event) => {
-  //   setAge(event.target.value);
-  // };
-
-
-
-  return (
+return (
     <div>
       <div class="navbar">
         <h6 class="navtext">Blood Bank Management System</h6>
@@ -22,5 +15,5 @@ const Navbar = () => {
     </div>
   );
 };
-<div></div>
+
 export default Navbar;

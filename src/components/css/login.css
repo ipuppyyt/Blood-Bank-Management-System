@@ -1,0 +1,45 @@
+.center{
+    position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+}
+.login-form-main-div{
+    background-color: #c2c2c29d;
+    height: 400px;
+    width: 400px;
+    border-radius: 25px;
+}
+
+.login-text-box-main{
+    padding: 10px;
+
+}
+.login-text-box{
+    width: 300px;
+}
+
+
+.login-page-button{
+    width: 300px;
+    height: 50px;
+}
+
+.wanttosignup{
+    color: rgb(201, 0, 0);
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.wanttosignup:hover{
+    color: rgb(0, 110, 255);
+    transition: all 0.3s ease-in-out;
+}
+
+.wanttosignup:active{
+    color: rgb(0, 110, 255);
+    transition: all 0.3s ease-in-out;
+}

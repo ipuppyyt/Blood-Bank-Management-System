@@ -13,6 +13,15 @@
     border-radius: 25px;
 }
 
+
+.signup-form-main-div{
+    background-color: #c2c2c29d;
+    height: 400px;
+    width: 900px;
+    border-radius: 25px;
+}
+
+
 .login-text-box-main{
     padding: 10px;
 
@@ -43,3 +52,12 @@
     color: rgb(0, 110, 255);
     transition: all 0.3s ease-in-out;
 }
+
+
+
+
+/* transition test */
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+  }

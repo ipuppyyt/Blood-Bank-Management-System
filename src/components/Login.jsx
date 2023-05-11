@@ -1,6 +1,7 @@
 import React from 'react';
 import './css/login.css';
 import { Button, TextField } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
@@ -17,7 +18,7 @@ const Login = () => {
         <Button type='submit' className='login-page-button' variant="contained">Login</Button>
         </div>
         <div className='login-text-box-main'>
-        <a href='/signup' className='login-page-link' class="wanttosignup">Don't have an account? Signup</a>
+        <Link to='/signup' className='login-page-link' class="wanttosignup">Don't have an account? Signup</Link>
         </div>
       </form>
     </div>

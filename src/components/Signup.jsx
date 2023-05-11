@@ -2,8 +2,13 @@ import React from 'react';
 import './css/login.css';
 import { Button, TextField } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { useSpring, animated } from 'react-spring';
+
+
 const Signup = () => {
-  return (
+    const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+  return (   
+    <animated.div style={props}>
     <div className='signup-form-main-div center'>
       <br></br><br></br><br></br><br></br>
       <form>
@@ -19,10 +24,12 @@ const Signup = () => {
         <Button type='submit' className='login-page-button' variant="contained">Signup</Button>
         </div>
         <div className='login-text-box-main'>
-        <Link to='/' className='login-page-link' class="wanttosignup">Already have an account? Login</Link>
+        <Link to='/login' className='login-page-link' class="wanttosignup">Already have an account? Login</Link>
         </div>
       </form>
     </div>
+    </animated.div>   
   )
 }
+
 export default Signup

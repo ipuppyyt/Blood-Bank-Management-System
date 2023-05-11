@@ -1,27 +1,36 @@
-html, body{
+html,
+body {
+    background-color: #ffffff;
     margin: 0;
-    padding: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5;
 }
-.navbar{
+
+.navbar {
     height: 65px;
-    background-color: #000000;
+    background-color: #006eff;
     color: white;
     box-shadow: 0px 0px 15px 0px rgb(0, 0, 0);
     position: fixed;
     width: 100%;
 }
 
-.navtext{
+.navtext {
     position: fixed;
     font-size: 18px;
     margin-top: 20px;
     margin-left: 20px;
 }
 
-.avatarr{
+.avatarr {
     position: fixed;
-    margin-top: 13px;
-    margin-left: 96%;
+    top: 13px;
+    right: 20px;
 }
+
+.my-button {
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.my-button:hover {
+    background-color: #45a049;
+  }

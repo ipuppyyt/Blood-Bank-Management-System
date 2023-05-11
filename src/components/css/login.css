@@ -7,18 +7,20 @@
       margin: auto;
 }
 .login-form-main-div{
-    background-color: #c2c2c29d;
+    background-color: #ececec9d;
     height: 400px;
     width: 400px;
     border-radius: 25px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
 }
 
 
 .signup-form-main-div{
-    background-color: #c2c2c29d;
+    background-color: #ececec9d;
     height: 400px;
     width: 900px;
     border-radius: 25px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
 }
 
 

@@ -2,9 +2,12 @@ import React from 'react';
 import './css/login.css';
 import { Button, TextField } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { useSpring, animated } from 'react-spring';
 
 const Login = () => {
+  const props = useSpring({ opacity: 1, from: { opacity: -0} });
   return (
+    <animated.div style={props}>
     <div className='login-form-main-div center'>
       <br></br><br></br><br></br><br></br>
       <form action="">
@@ -22,6 +25,7 @@ const Login = () => {
         </div>
       </form>
     </div>
+    </animated.div>
   )
 }
 

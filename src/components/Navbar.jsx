@@ -1,15 +1,27 @@
 import React from "react";
 import "./css/navbar.css";
-import { Avatar } from "@mui/material";
+import { Button } from "@mui/material";
+import { blue } from "@mui/material/colors";
 
 const Navbar = () => {
+
+const thispath = window.location.pathname;
+const navdisplay = () => {
+  if (thispath === "/") 
+  {
+      const retnav = (<div><Button style={{ backgroundColor: blue[500],fontWeight: "bolder" }} variant="contained">SignUp</Button>
+      &nbsp;&nbsp;<Button style={{ backgroundColor: blue[500],fontWeight: "bolder" }}  variant="contained">Login</Button></div>) ;
+      return retnav; 
+  }
+
+}
 
 return (
     <div>
       <div class="navbar">
         <h6 class="navtext">Blood Bank Management System</h6>
         <div class="avatarr">
-              <Avatar alt="O" src="https://list.lisimg.com/image/7938847/740.jpg" />
+          {navdisplay()}
         </div>
       </div>
     </div>

@@ -1,0 +1,17 @@
+.footer-div{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer {
+    font-weight: bold;
+    border: 1px solid #3333336b;
+     color: #333;
+     padding: 20px 0;
+     text-align: center;
+ }
+
+ .text {
+     margin: 0;
+ }

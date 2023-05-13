@@ -21,7 +21,13 @@ body {
     margin-left: 20px;
 }
 
-.avatarr {
+.dash-avatarr {
+    position: fixed;
+    top: 7px;
+    right: 20px;
+}
+
+.dash-btn {
     position: fixed;
     top: 13px;
     right: 20px;

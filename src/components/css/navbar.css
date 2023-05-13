@@ -3,6 +3,7 @@ body {
     background-color: #ffffff;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
 }
 
 .navbar {
@@ -32,6 +33,7 @@ body {
     top: 13px;
     right: 20px;
 }
+
 
 .my-button {
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);

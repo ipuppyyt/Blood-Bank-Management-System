@@ -21,7 +21,7 @@ const Navbar = () => {
 
   //page route
   const routeHome = () =>{ 
-    window.location.href = "/";
+    window.location.href = "../"
   }
   const routeSignup = () =>{ 
     window.location.href = "/signup";
@@ -68,9 +68,10 @@ else if (window.location.pathname === "/login")
   }
 else if (window.location.pathname === "/user/dashboard")
 {
-  let retnav = (<div className="dash-avatarr"><React.Fragment>
+  let retnav = (<div className="dash-avatarr">
+    <React.Fragment>
     <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
-      <Tooltip title="Account settings">
+      <Tooltip title="Account">
         <IconButton onClick={handleClick} size="small" sx={{ ml: 2 }}
           aria-controls={open ? "account-menu" : undefined} aria-haspopup="true"
           aria-expanded={open ? "true" : undefined}>
@@ -98,7 +99,8 @@ else if (window.location.pathname === "/user/dashboard")
         <ListItemIcon><LogoutIcon fontSize="small" /></ListItemIcon>Logout
       </MenuItem>
     </Menu>
-  </React.Fragment></div>);
+  </React.Fragment>
+  </div>);
   return retnav;
 }
 };

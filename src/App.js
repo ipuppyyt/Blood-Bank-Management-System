@@ -20,8 +20,8 @@ function App() {
           <Route path="/user/dashboard" element={<Dashboard />} />
           <Route path="/user/profile" element={<Profile />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   );
 }

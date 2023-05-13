@@ -1,0 +1,48 @@
+.tablediv{
+    width: 1000px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.bold{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #a8a8a8;
+}
+
+.table{
+    width: auto;
+    margin: 100 auto;
+    text-align: center;
+    color: white;
+    box-shadow: #000000 0px 0px 10px 0px;
+}
+
+.tablehead{
+    background-color: #d1d1d13f;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    width: 50px;
+    text-align: center;
+    align-items: center;
+}
+
+.tablerow{
+    background-color: #d1d1d13f;
+    color: white;
+    width: 100px;
+    text-align: center;
+    align-items: center;
+}
+.tablecell{
+    text-align: center;
+    align-items: center;
+    width: 100px;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(255, 255, 255);
+}

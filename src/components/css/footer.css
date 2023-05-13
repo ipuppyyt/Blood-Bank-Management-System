@@ -1,2 +1,8 @@
 .footer{
+    display: 'flex';
+    flex-direction: 'column';
+}
+
+.minheight{
+    min-height: 100vh;
 }

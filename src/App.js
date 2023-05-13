@@ -2,10 +2,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/Login";
 import Navbar from './components/Navbar';
 import Signup from "./components/Signup";
-import Footer from "./components/Footer";
 import Dashboard from "./components/Dashboard";
 import Profile from "./components/Profile";
 import Home from "./components/Home";
+// import Footer from "./components/Footer";
 
 
 function App() {
@@ -20,8 +20,8 @@ function App() {
           <Route path="/user/dashboard" element={<Dashboard />} />
           <Route path="/user/profile" element={<Profile />} />
         </Routes>
+        {/* <Footer /> */}
       </BrowserRouter>
-      {/* <Footer /> */}
     </div>
   );
 }

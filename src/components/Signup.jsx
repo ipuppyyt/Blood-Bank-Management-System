@@ -29,6 +29,7 @@ const Signup = () => {
       </form>
     </div>
     </animated.div>   
+
   )
 }
 

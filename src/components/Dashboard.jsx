@@ -17,9 +17,8 @@ const Dashboard = () => {
 
 
   return (
-    <div>
-      <br></br><br></br><br></br>
       <div className="tablediv"><br></br>
+      <br></br><br></br><br></br>
         <Table className='table'>
             <TableHead className="tablehead">
                 <TableRow className="tablerow">
@@ -39,9 +38,7 @@ const Dashboard = () => {
                     </TableRow>
                 })}
             </TableBody>
-        </Table>
-    </div>
-    <br></br>
+        </Table><br></br>
     </div>
   );
 };

@@ -1,22 +1,22 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import './css/footer.css';
+import { Box, Container, Typography } from '@mui/material';
 
 const Footer = () => {
   return (
-    <div class='footer'>
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar style={{backgroundColor:"#000"}}>
-        <Toolbar>
-          <Typography variant="p" style={{fontWeight:"bold"}} component="div" sx={{ flexGrow: 1 }}>
-            &copy; {(new Date().getFullYear())} Blood Bank Management System. All Rights Reserved.
+    <div class='footer minheight'>
+          <Box component="footer" sx={{ py: 3, px: 2, mt: 'auto',
+          backgroundColor: (theme) =>
+            theme.palette.mode === 'light'
+              ? theme.palette.grey[200]
+              : theme.palette.grey[800],
+        }}>
+        <Container maxWidth="sm">
+          <Typography variant="p">
+          &copy; {(new Date().getFullYear())} Blood Bank Management System. All Rights Reserved.
           </Typography>
-        </Toolbar>
-      </AppBar>
-    </Box>
+        </Container>
+      </Box>
     </div>
   );
 };

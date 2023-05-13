@@ -42,3 +42,9 @@ body {
 .my-button:hover {
     background-color: #45a049;
   }
+
+.blood-logo{
+    position: fixed;
+    top:6px;
+    left:1250px;
+}

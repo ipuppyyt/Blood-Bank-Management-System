@@ -111,6 +111,11 @@ return (
       <div class="navbar">
         <h6 class="navtext">Blood Bank Management System</h6>
         <div class="avatarr">
+<Avatar className='blood-logo'
+  alt="Logo"
+  src="https://mir-s3-cdn-cf.behance.net/projects/404/552791129613961.Y3JvcCw1NzUzLDQ1MDAsMTEyNSww.jpg"
+  sx={{ width: 56, height: 56 }}
+/>
           {navdisplay()}
         </div>
       </div>

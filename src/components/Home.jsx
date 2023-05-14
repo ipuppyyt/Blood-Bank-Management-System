@@ -1,13 +1,10 @@
 import React from 'react'
+import Navatar from './Navatar'
 
 
 const Home = () => {
   return (
-    <div style={{height:"90%"}}>
-      
-
-
-    </div>
+      <Navatar />
   )
 }
 

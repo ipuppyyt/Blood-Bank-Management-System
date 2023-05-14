@@ -3,11 +3,14 @@ import './css/login.css';
 import { Button, TextField } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
+import Navatar from './Navatar';
 
 
 const Signup = () => {
     const props = useSpring({ opacity: 1, from: { opacity: 0 } });
   return (   
+    <div>
+      <Navatar />
     <animated.div style={props}>
     <div className='signup-form-main-div center'>
       <br></br><br></br><br></br><br></br>
@@ -29,7 +32,7 @@ const Signup = () => {
       </form>
     </div>
     </animated.div>   
-
+    </div>
   )
 }
 

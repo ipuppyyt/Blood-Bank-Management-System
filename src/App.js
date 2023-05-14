@@ -11,8 +11,8 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div style={{ textAlign: "center" }}>
-      <Navbar />
       <BrowserRouter>
+      <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />

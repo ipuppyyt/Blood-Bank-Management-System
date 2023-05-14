@@ -1,11 +1,10 @@
 import * as React from "react";
+import Navatar from "./Navatar";
 
 
 const Profile = () => {
   return (
-    <div>
-      
-    </div>
+    <Navatar />
   )
 }
 

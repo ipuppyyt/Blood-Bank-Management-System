@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import axios from "axios";
 import './css/dashboard.css';
 import './css/fonts.css'
+import Navatar from "./Navatar";
 
 const Dashboard = () => {
 
@@ -17,6 +18,8 @@ const Dashboard = () => {
 
 
   return (
+    <div>
+        <Navatar />
       <div className="tablediv"><br></br>
       <br></br><br></br><br></br>
         <Table className='table'>
@@ -39,6 +42,7 @@ const Dashboard = () => {
                 })}
             </TableBody>
         </Table><br></br>
+    </div>
     </div>
   );
 };

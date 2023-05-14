@@ -32,7 +32,7 @@ const Navbar = () => {
 
 
   const gotoHome = () =>{
-    window.location.href = "/user/dashboard";
+    window.location.href = "/";
   }
 
   //navbar dashboard menu control
@@ -109,13 +109,13 @@ else if (window.location.pathname === "/user/dashboard")
 return (
     <div>
       <div class="navbar">
-        <h6 class="navtext">Blood Bank Management System</h6>
+        <div class="navlogo">
+          <a href="/" style={{color:"white"}}>
+            <img class="navlogo-img" src="https://th.bing.com/th/id/OIP.B-z7OG5fX6O6CQ7h4ITUQAHaHZ?pid=ImgDet&rs=1" alt="Navlogo"/>
+            <h6 class="navtext">BBMS</h6>
+          </a>
+        </div>
         <div class="avatarr">
-<Avatar className='blood-logo'
-  alt="Logo"
-  src="https://mir-s3-cdn-cf.behance.net/projects/404/552791129613961.Y3JvcCw1NzUzLDQ1MDAsMTEyNSww.jpg"
-  sx={{ width: 56, height: 56 }}
-/>
           {navdisplay()}
         </div>
       </div>

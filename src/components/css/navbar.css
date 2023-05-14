@@ -15,12 +15,33 @@ body {
     width: 100%;
 }
 
+.navlogo{
+    text-decoration: none;  
+    color: white;  
+}
+
+.navlogo-img{
+    height: 50px;
+    border-radius: 25px;
+    box-shadow: 0 0 25px 0 rgba(104, 104, 104, 0.2);
+    top: 7px;
+    left: 20px;
+    position: fixed;
+}
+.navlogo-img:hover{
+    transform:scale(1.1);
+    transform: rotate(360deg);
+    transition: all 0.3s ease-in-out;
+}
+
+
 .navtext {
     position: fixed;
     font-size: 18px;
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 80px;
 }
+
 
 .dash-avatarr {
     position: fixed;

@@ -4,7 +4,7 @@ import { Box, Container, Typography } from '@mui/material';
 
 const Footer = () => {
   return (
-    <div class='footer minheight'>
+    <div class='footer'>
           <Box component="footer" sx={{ py: 3, px: 2, mt: 'auto',
           backgroundColor: (theme) =>
             theme.palette.mode === 'light'

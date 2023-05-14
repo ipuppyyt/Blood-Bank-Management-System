@@ -5,7 +5,7 @@ import Signup from "./components/Signup";
 import Dashboard from "./components/Dashboard";
 import Profile from "./components/Profile";
 import Home from "./components/Home";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
           <Route path="/user/dashboard" element={<Dashboard />} />
           <Route path="/user/profile" element={<Profile />} />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </BrowserRouter>
     </div>
   );

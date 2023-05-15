@@ -9,7 +9,6 @@ const Footer = () => {
   return (
     <div class='footer'>
          <div class="footer-icons">
-          <div class="footer-text">© {(new Date().getFullYear())} Blood Bank Management System.</div>
             {/* YouTube Icon */}
             <div class="icon-bg yt">
               <a href='https://www.youtube.com/' title='Youtube' target="_blank" rel='noreferrer'><YouTubeIcon style={{color:"white"}} /></a>
@@ -30,6 +29,7 @@ const Footer = () => {
               <a href='https://www.instagram.com/' title='Instagram' target="_blank" rel='noreferrer'><InstagramIcon style={{color:"white"}} /></a>
             </div>
          </div>
+         <div class="footer-text">© {(new Date().getFullYear())} Blood Bank Management System. All rights reserved.</div>
     </div>
   );
 };

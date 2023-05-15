@@ -58,6 +58,14 @@ body {
     z-index: 999;
 }
 
+.dash-btn-left {
+    position: fixed;
+    top: 13px;
+    right: 65px;
+    z-index: 999;
+}
+
+
 
 .my-button {
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);

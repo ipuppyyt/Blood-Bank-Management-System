@@ -1,0 +1,115 @@
+.center{
+    position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+}
+
+
+.add-form-main-div{
+    margin-top: 90px;
+    background-color: #ececec9d;
+    height: 500px;
+    width: 900px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+}
+
+.blood-group-select{
+    width: 300px;
+    height: 55px;
+    border-radius: 5px;
+    background-color: #ececec9d;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #00000034;
+}
+
+.blood-group-select:hover{
+    border: 1px solid #000000;
+}
+
+.blood-group-select:focus{
+    border: 2px solid #0059ff;
+}
+
+.blood-group-option{
+    height: 55px;
+    background-color: #ececec9d;
+}
+
+.age-group-select{
+    width: 300px;
+    height: 55px;
+    border-radius: 5px;
+    background-color: #ececec9d;
+    padding-left: 10px;
+    font-size: 16px;
+    border: 1px solid #00000034;
+}
+
+.age-group-select:hover{
+    border: 1px solid #000000;
+}
+
+.age-group-select:focus{
+    border: 2px solid #0059ff;
+}
+
+
+.category-select{
+    width: 300px;
+    height: 55px;
+    border-radius: 5px;
+    background-color: #ececec9d;
+    padding-left: 10px;
+    font-size: 16px;
+    border: 1px solid #00000034;
+}
+
+.category-select:hover{
+    border: 1px solid #000000;
+}
+
+.category-select:focus{
+    border: 2px solid #0059ff;
+}
+
+.unitsofblood-select{
+    width: 300px;
+    height: 55px;
+    border-radius: 5px;
+    background-color: #ececec9d;
+    padding-left: 10px;
+    font-size: 16px;
+    border: 1px solid #00000034;
+}
+
+.unitsofblood-select:hover{
+    border: 1px solid #000000;
+}
+
+.unitsofblood-select:focus{
+    border: 2px solid #0059ff;
+}
+
+
+
+
+/* transition test */
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+  }
+
+  input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+}

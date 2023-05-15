@@ -21,7 +21,49 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
-  background-color: #efefef;
+  padding: 15px;
+  border-top: 2px solid #0000003f;
+  background-color: #e4e4e4;
+}
+
+
+.footer-text{
   text-align: center;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.footer-icons{
+  text-align: center;
+}
+
+.icon-bg{
+  background-color: #747474;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  display: inline-block;
+  text-align: center;
+  padding: 5px;
+}
+
+.yt:hover{
+  background-color: #ff0000;
+  transition: all 0.3s ease-in-out;
+  color: white;
+}
+
+.fb:hover{
+  background-color: #3b5998;
+  transition: all 0.3s ease-in-out;
+}
+
+.tw:hover{
+  background-color: #00aced;
+  transition: all 0.3s ease-in-out;
+}
+
+.ig:hover{
+  background-color: #d400ff;
+  transition: all 0.3s ease-in-out;
 }

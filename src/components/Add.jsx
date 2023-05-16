@@ -3,11 +3,27 @@ import './css/add.css';
 import { Button, TextField } from '@mui/material';
 import { useSpring, animated } from 'react-spring';
 import Navatar from './Navatar';
+import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 
 
 const Add = () => {
     const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+
+
+    const {register,handleSubmit} = useForm();
+    const submitApplication= (data) => {
+      console.log(data);
+      axios.post('https://blood-bank-server-side.onrender.com/user/addperson',data).then((res) => {
+        console.log(res);
+        alert(data.name + " Successfully Applied");
+      }).catch((err) => {
+        console.log(err);
+        alert("Signup Failed");
+      })
+    }
+  
 
     
     // Enable number of units of blood dropdown based on the selected value of the category dropdown
@@ -30,10 +46,10 @@ const Add = () => {
             <animated.div style={props}>
                 <div className='add-form-main-div center'>
                     <br></br><br></br><br></br><br></br>
-                    <form action=''>
+                    <form>
                         <div className='login-text-box-main'>
-                            <TextField className='login-text-box' type='text' id="name" label="Full Name" variant="outlined" required />&nbsp;&nbsp;&nbsp;&nbsp;
-                            <select name="age" id="age" className='age-group-select' required>
+                            <TextField className='login-text-box' type='text' name="name" id="name" {...register('name')} label="Full Name" variant="outlined" required />&nbsp;&nbsp;&nbsp;&nbsp;
+                            <select name="age" id="age" {...register('age')} className='age-group-select' required>
                                 <option value="" disabled selected hidden required>Age</option>
                                 <option value="1" class="age-group-option">1</option>
                                 <option value="2" class="age-group-option">2</option>
@@ -148,11 +164,11 @@ const Add = () => {
                             </select>
                         </div>
                         <div className='login-text-box-main'>
-                            <TextField className='login-text-box' type='email' id="email" label="E-Mail" variant="outlined" required />&nbsp;&nbsp;&nbsp;&nbsp;
-                            <TextField className='login-text-box' type='number' id="phone" label="Phone" variant="outlined" required />
+                            <TextField className='login-text-box' type='email' name="email" id="email" {...register('email')} label="E-Mail" variant="outlined" required />&nbsp;&nbsp;&nbsp;&nbsp;
+                            <TextField className='login-text-box' type='number' name="phone" id="phone" {...register('phone')} label="Phone" variant="outlined" required />
                         </div>
                         <div className='login-text-box-main'>
-                            <select name="blood-group" id="blood-group" className='blood-group-select' required>
+                            <select name="bloodgroup" id="blood-group" {...register('bloodgroup')} className='blood-group-select' required>
                                 <option value="" class="blood-group-option" disabled selected hidden>Blood Group</option>
                                 <option value="A+" class="blood-group-option">A+</option>
                                 <option value="A-" class="blood-group-option">A-</option>
@@ -163,14 +179,14 @@ const Add = () => {
                                 <option value="O+" class="blood-group-option">O+</option>
                                 <option value="O-" class="blood-group-option">O-</option>
                             </select>&nbsp;&nbsp;&nbsp;&nbsp;
-                            <select name="category" id="category" className='category-select' required value={firstSelectValue} onChange={handleFirstSelectChange}>
+                            <select name="category" id="category" {...register('category')} className='category-select' required value={firstSelectValue} onChange={handleFirstSelectChange}>
                                 <option value="" class="category-option" disabled selected hidden>Category</option>
                                 <option value="Donor" class="category-option">Donor</option>
                                 <option value="Recipient" class="category-option">Recipient</option>
                             </select>
                         </div>
                         <div className='login-text-box-main'>
-                            <select name="unitsofblood-group" id="unitsofblood-group" className='unitsofblood-select' required value={secondSelectValue} onChange={handleSecondSelectChange} disabled={!secondSelectEnabled}>
+                            <select name="unitsofblood" id="unitsofblood-group" {...register('unitsofblood')} className='unitsofblood-select' required value={secondSelectValue} onChange={handleSecondSelectChange} disabled={!secondSelectEnabled}>
                                 <option value="" class="unitsofblood-option" disabled selected hidden>Unit(s) of Blood</option>
                                 <option value="1" class="unitsofblood-option">1 Unit</option>
                                 <option value="2" class="unitsofblood-option">2 Units</option>
@@ -189,11 +205,11 @@ const Add = () => {
                                 <option value="10" class="unitsofblood-option">15 Units</option>
                             </select>
                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            <TextField className='login-text-box' type='text' id="ailments" label="Ailments (If Any)" variant="outlined" />
+                            <TextField className='login-text-box' type='text' name="ailments" id="ailments" {...register('ailments')} label="Ailments (If Any)" variant="outlined" />
                         </div>
 
                         <div className='login-text-box-main'>
-                            <Button type='submit' className='login-page-button' variant="contained" style={{ fontWeight: "bold" }}>Apply</Button>
+                            <Button type='submit' className='login-page-button' variant="contained" style={{ fontWeight: "bold" }} onClick={handleSubmit(submitApplication)}>Apply</Button>
                         </div>
                     </form>
                 </div>

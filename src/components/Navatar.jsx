@@ -17,6 +17,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import Badge from '@mui/material/Badge';
+import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import { Link } from "react-router-dom";
 
 const Navatar = () => {
@@ -62,7 +63,8 @@ const Navatar = () => {
     //User Dashboard NavIcon
 
     else if (window.location.pathname === "/user/dashboard") {
-      let retnav = (<div className="dash-avatarr">
+      let retnav = (<div><div className="dash-btn-left"><Link to="/user/add"><Button style={{ backgroundColor: blue[500], fontWeight: "bolder" }} variant="contained"><VolunteerActivismIcon  style={{ fontSize: "medium" }} />&nbsp;Donate/Receive</Button></Link>
+      &nbsp;&nbsp;</div><div className="dash-avatarr">
         <React.Fragment>
           <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
             <Tooltip title="Account">
@@ -98,6 +100,7 @@ const Navatar = () => {
             </MenuItem>
           </Menu>
         </React.Fragment>
+      </div>
       </div>);
       return retnav;
     }

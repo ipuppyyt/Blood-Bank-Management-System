@@ -4,10 +4,32 @@ import { Button, TextField } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
 import Navatar from './Navatar';
+import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 
 const Signup = () => {
     const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+
+    const {register,handleSubmit} = useForm();
+    const submitSignup = (data) => {
+      if(document.getElementById('userPassword').value !== document.getElementById('userConfirmPassword').value){
+        console.log(document.getElementById('userPassword').value);
+        console.log(document.getElementById('userConfirmPassword').value);
+        alert("Passwords do not match");
+      }
+      else{
+      console.log(data);
+      axios.post('https://blood-bank-server-side.onrender.com/user/create',data).then((res) => {
+        console.log(res);
+        alert("Signup Successful");
+      }).catch((err) => {
+        console.log(err);
+        alert("Signup Failed");
+      })
+    }}
+  
+
   return (   
     <div>
       <Navatar />
@@ -16,15 +38,15 @@ const Signup = () => {
       <br></br><br></br><br></br><br></br>
       <form>
       <div className='login-text-box-main'>
-          <TextField className='login-text-box' type='text' id="name" label="Full Name" variant="outlined" required />&nbsp;&nbsp;&nbsp;&nbsp;
-          <TextField className='login-text-box' type='email' id="email" label="E-mail" variant="outlined" required />
+          <TextField className='login-text-box' type='text' name='userName' {...register('userName')} id="userName" label="Full Name" variant="outlined" required />&nbsp;&nbsp;&nbsp;&nbsp;
+          <TextField className='login-text-box' type='email' name='userEmail' {...register('userEmail')} id="userEmail" label="E-mail" variant="outlined" required />
         </div>
         <div className='login-text-box-main'>
-          <TextField className='login-text-box' type='password' id="password" label="Password" variant="outlined" required />&nbsp;&nbsp;&nbsp;&nbsp;
-          <TextField className='login-text-box' type='password' id="repassword" label="Retype Password" variant="outlined" required />
+          <TextField className='login-text-box' type='password' name='userPassword' {...register('userPassword')} id="userPassword" label="Password" variant="outlined" required />&nbsp;&nbsp;&nbsp;&nbsp;
+          <TextField className='login-text-box' type='password' name='userConfirmPassword' {...register('userConfirmPassword')} id="userConfirmPassword" label="Retype Password" variant="outlined" required />
         </div>
         <div className='login-text-box-main'>
-        <Button type='submit' className='login-page-button' variant="contained" style={{fontWeight:"bold"}}>Signup</Button>
+        <Button type='submit' className='login-page-button' variant="contained" style={{fontWeight:"bold"}} onClick={handleSubmit(submitSignup)}>Signup</Button>
         </div>
         <div className='login-text-box-main'>
         <Link to='/login' className='login-page-link' class="wanttosignup">Already have an account? Login</Link>

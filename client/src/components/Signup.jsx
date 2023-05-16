@@ -20,7 +20,7 @@ const Signup = () => {
       }
       else{
       console.log(data);
-      axios.post('https://blood-bank-server-side.onrender.com/user/create',data).then((res) => {
+      axios.post('https://bloodbankserver.onrender.com/user/create',data).then((res) => {
         console.log(res);
         alert("Signup Successful");
       }).catch((err) => {

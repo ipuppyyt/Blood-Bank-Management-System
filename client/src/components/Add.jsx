@@ -15,7 +15,7 @@ const Add = () => {
     const {register,handleSubmit} = useForm();
     const submitApplication= (data) => {
       console.log(data);
-      axios.post('https://blood-bank-server-side.onrender.com/user/addperson',data).then((res) => {
+      axios.post('https://bloodbankserver.onrender.com/user/addperson',data).then((res) => {
         console.log(res);
         alert(data.name + " Successfully Applied");
       }).catch((err) => {

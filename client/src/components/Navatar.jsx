@@ -63,7 +63,7 @@ const Navatar = () => {
     //User Dashboard NavIcon
 
     else if (window.location.pathname === "/user/dashboard") {
-      let retnav = (<div><div className="dash-btn-left"><Link to="/user/add"><Button style={{ backgroundColor: blue[500], fontWeight: "bolder" }} variant="contained"><VolunteerActivismIcon  style={{ fontSize: "medium" }} />&nbsp;Donate/Receive</Button></Link>
+      let retnav = (<div><div className="dash-btn-left"><Link to="/user/apply"><Button style={{ backgroundColor: blue[500], fontWeight: "bolder" }} variant="contained"><VolunteerActivismIcon  style={{ fontSize: "medium" }} />&nbsp;Donate/Receive</Button></Link>
       &nbsp;&nbsp;</div><div className="dash-avatarr">
         <React.Fragment>
           <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
@@ -105,9 +105,9 @@ const Navatar = () => {
       return retnav;
     }
 
-        //User Add Donor/Receiver NavIcon
+        //Apply Donor/Receiver NavIcon
 
-        else if (window.location.pathname === "/user/add" || window.location.pathname === "/user/profile") {
+        else if (window.location.pathname === "/user/apply" || window.location.pathname === "/user/profile") {
           let retnav = (<div><div className="dash-btn-left"><Link to="/user/dashboard"><Button style={{ backgroundColor: blue[500], fontWeight: "bolder" }} variant="contained"><DashboardIcon style={{ fontSize: "medium" }}/>&nbsp;Dashboard</Button></Link>
           &nbsp;&nbsp;</div><div className="dash-avatarr">
             <React.Fragment>

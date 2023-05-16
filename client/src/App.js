@@ -55,7 +55,7 @@ function App() {
           <Route path="/user/dashboard" element={<Dashboard />} />
           <Route path="/user/profile" element={<Profile />} />
           <Route path="/user/editprofile" element={<Editprofile />} />
-          <Route path="/user/add" element={<Add />} />
+          <Route path="/user/apply" element={<Add />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/adddonor" element={<AdminAddDonor />} />

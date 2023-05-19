@@ -1,0 +1,1 @@
+Run "npm install -g nodemon" after "npm i" to get nodemon working.

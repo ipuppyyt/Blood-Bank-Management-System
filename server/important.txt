@@ -9,4 +9,4 @@ If execution policy issue :
 
 3. Set-ExecutionPolicy RemoteSigned
 
-4. Set-ExecutionPolicy Restricted
+4. Set-ExecutionPolicy Unrestricted

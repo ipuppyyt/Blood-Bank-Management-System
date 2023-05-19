@@ -1,1 +1,12 @@
 Run "npm install -g nodemon" after "npm i" to get nodemon working.
+
+
+If execution policy issue :
+
+1. Get-ExecutionPolicy
+
+2. Get-ExecutionPolicy -List
+
+3. Set-ExecutionPolicy RemoteSigned
+
+4. Set-ExecutionPolicy Restricted

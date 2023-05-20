@@ -61,12 +61,26 @@ app.post('/admin/adddonor', (req, res) => {
 
 
 // ************************************** SignedUp Users View **************************************
-app.get('/user/view', async (req, res) => {
+app.get('/user/view/userdata', async (req, res) => {
     var result = await userData.find();
-    // var result1 = await CourseInfo.findOne({"courseName":"Hi"});
-    // res.json(result);
     res.json(result);
 });
+
+
+// ************************************** Pending Verification View **************************************
+app.get('/user/view/pendingverification', async (req, res) => {
+    var result = await pendingVerification.find();
+    res.json(result);
+});
+
+
+// ************************************** Admin Verified View **************************************
+app.get('/user/view/adminverified', async (req, res) => {
+    var result = await adminVerified.find();
+    res.json(result);
+});
+
+
 
 
 //Update
@@ -74,6 +88,8 @@ app.get('/user/view', async (req, res) => {
 //     var result = await userData.findByIdAndUpdate(req.body._id, req.body);
 //     res.send("Course Successfully Updated.")
 // })
+
+
 
 // 4. Setting port number
 app.listen(5000, () => {

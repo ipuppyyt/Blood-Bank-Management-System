@@ -164,6 +164,12 @@ const AdminAddDonor = () => {
                                 <option value="O-" class="blood-group-option">O-</option>
                             </select>&nbsp;&nbsp;&nbsp;&nbsp;
                             <TextField className='login-text-box' type='text' name="ailments" id="ailments" {...register('ailments')} label="Ailments (If Any)" variant="outlined" />
+                            <select name="category" id="category" {...register('category')} className='blood-group-select' required hidden>
+                                <option value="Donor" class="blood-group-option" disabled selected hidden></option>
+                            </select>
+                            <select name='unitsofblood' id='units-of-blood' {...register('unitsofblood')} className='blood-group-select' required hidden>
+                                <option value="-" class="blood-group-option" disabled selected hidden></option>
+                            </select>
                         </div>
                         <div className='login-text-box-main'>
                             <Button type='submit' className='login-page-button' variant="contained" style={{ fontWeight: "bold" }} onClick={handleSubmit(submitApplication)}>Add Donor</Button>

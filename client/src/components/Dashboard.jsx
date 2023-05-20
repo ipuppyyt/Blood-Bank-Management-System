@@ -11,8 +11,8 @@ const Dashboard = () => {
   var [value,setValue]=useState([])
   useEffect(()=>{
       axios.get('https://bloodbankserver.onrender.com/user/view/adminverified').then((response)=>{
-          console.log(response.data.users);
-          setValue(response.data.users);
+          console.log(response.data);
+          setValue(response.data);
       });
   },[])
 
@@ -25,19 +25,27 @@ const Dashboard = () => {
         <Table className='table'>
             <TableHead className="tablehead">
                 <TableRow className="tablerow">
-                    <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">First Name</TableCell>
-                    <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Last Name</TableCell>
+                    <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Full Name</TableCell>
                     <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Age</TableCell>
-                    <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">City</TableCell>
+                    <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">E-Mail</TableCell>
+                    <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Phone</TableCell>
+                    <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Blood Group</TableCell>
+                    <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Category</TableCell>
+                    <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Units of Blood</TableCell>
+                    <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Ailments</TableCell>
                 </TableRow>
             </TableHead>
             <TableBody className="tablehead">
-                {value.map((data,ind)=>{
+                {value.map((data)=>{
                     return<TableRow>
-                        <TableCell className="tablecell">{data.firstName}</TableCell>
-                        <TableCell className="tablecell">{data.lastName}</TableCell>
+                        <TableCell className="tablecell">{data.name}</TableCell>
                         <TableCell className="tablecell">{data.age}</TableCell>
-                        <TableCell className="tablecell">{data.address.city}</TableCell>
+                        <TableCell className="tablecell">{data.email}</TableCell>
+                        <TableCell className="tablecell">{data.phone}</TableCell>
+                        <TableCell className="tablecell">{data.bloodgroup}</TableCell>
+                        <TableCell className="tablecell">{data.category}</TableCell>
+                        <TableCell className="tablecell">{data.unitsofblood}</TableCell>
+                        <TableCell className="tablecell">{data.ailments}</TableCell>
                     </TableRow>
                 })}
             </TableBody>

@@ -34,10 +34,14 @@ const AdminDashboard = () => {
             <TableBody className="tablehead">
                 {value.map((data,ind)=>{
                     return<TableRow>
-                        <TableCell className="tablecell">{data.firstName}</TableCell>
-                        <TableCell className="tablecell">{data.lastName}</TableCell>
+                        <TableCell className="tablecell">{data.name}</TableCell>
                         <TableCell className="tablecell">{data.age}</TableCell>
-                        <TableCell className="tablecell">{data.address.city}</TableCell>
+                        <TableCell className="tablecell">{data.email}</TableCell>
+                        <TableCell className="tablecell">{data.phone}</TableCell>
+                        <TableCell className="tablecell">{data.bloodgroup}</TableCell>
+                        <TableCell className="tablecell">{data.category}</TableCell>
+                        <TableCell className="tablecell">{data.unitsofblood}</TableCell>
+                        <TableCell className="tablecell">{data.ailments}</TableCell>
                     </TableRow>
                 })}
             </TableBody>

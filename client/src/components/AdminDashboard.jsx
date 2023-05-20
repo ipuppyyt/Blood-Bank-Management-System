@@ -10,7 +10,7 @@ const AdminDashboard = () => {
 
     var [value,setValue]=useState([])
     useEffect(()=>{
-        axios.get('https://dummyjson.com/users').then((response)=>{
+        axios.get('https://bloodbankserver.onrender.com/user/view/adminverified').then((response)=>{
             console.log(response.data.users);
             setValue(response.data.users);
         });

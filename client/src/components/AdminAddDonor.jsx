@@ -8,7 +8,6 @@ import axios from 'axios';
 
 
 const AdminAddDonor = () => {
-
   const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
 
@@ -167,7 +166,7 @@ const AdminAddDonor = () => {
                             <TextField className='login-text-box' type='text' name="ailments" id="ailments" {...register('ailments')} label="Ailments (If Any)" variant="outlined" />
                         </div>
                         <div className='login-text-box-main'>
-                            <Button type='submit' className='login-page-button' variant="contained" style={{ fontWeight: "bold" }} onClick={handleSubmit(submitApplication)}>Apply</Button>
+                            <Button type='submit' className='login-page-button' variant="contained" style={{ fontWeight: "bold" }} onClick={handleSubmit(submitApplication)}>Add Donor</Button>
                         </div>
                     </form>
                 </div>

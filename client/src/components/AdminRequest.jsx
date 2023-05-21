@@ -17,10 +17,13 @@ const AdminRequest = () => {
   },[])
 
 
+  // const [reloadKey, setReloadKey] = useState(0);
   const deleteuser=(id)=>{
-      axios.post(`https://bloodbankserver.onrender.com/user/delete/${id}`).then((response)=>{
+      const data ={_id : id};
+      axios.post(`https://bloodbankserver.onrender.com/user/delete/pendingverification`,data).then((response)=>{
           console.log(response.data);
-          window.location.reload();
+        //setReloadKey(reloadKey + 1);
+          //window.location.reload();
       })
   }
 
@@ -45,7 +48,7 @@ const AdminRequest = () => {
             </TableRow>
         </TableHead>
         <TableBody className="tablehead">
-            {value.map((data)=>{
+            {value.map((data,index)=>{
                 return<TableRow>
                     <TableCell className="tablecell">{data.name}</TableCell>
                     <TableCell className="tablecell">{data.age}</TableCell>
@@ -55,7 +58,7 @@ const AdminRequest = () => {
                     <TableCell className="tablecell">{data.category}</TableCell>
                     <TableCell className="tablecell">{data.unitsofblood}</TableCell>
                     <TableCell className="tablecell">{data.ailments}</TableCell>
-                    <TableCell className="tablecell"><Button color="success" variant="contained">Accept</Button>&nbsp;&nbsp;&nbsp;&nbsp;<Button color="error" variant="contained" >Decline</Button></TableCell>
+                    <TableCell className="tablecell"><Button color="success" variant="contained">Accept</Button>&nbsp;&nbsp;&nbsp;&nbsp;<Button color="error" variant="contained" onClick={deleteuser}>Decline</Button></TableCell>
                 </TableRow>
             })}
         </TableBody>

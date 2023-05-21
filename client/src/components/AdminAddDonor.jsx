@@ -168,7 +168,7 @@ const AdminAddDonor = () => {
                                 <option value="Donor" class="blood-group-option" disabled selected hidden></option>
                             </select>
                             <select name='unitsofblood' id='units-of-blood' {...register('unitsofblood')} className='blood-group-select' required hidden>
-                                <option value="-" class="blood-group-option" disabled selected hidden></option>
+                                <option value="0" class="blood-group-option" disabled selected hidden></option>
                             </select>
                         </div>
                         <div className='login-text-box-main'>

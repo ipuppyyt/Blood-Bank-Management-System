@@ -16,7 +16,7 @@ const AdminAddDonor = () => {
     console.log(data);
     axios.post('https://bloodbankserver.onrender.com/admin/adddonor',data).then((res) => {
       console.log(res);
-      alert(data.name + " Successfully Applied");
+      alert(data.name + " Successfully Added Donor");
     }).catch((err) => {
       console.log(err);
       alert("Signup Failed");

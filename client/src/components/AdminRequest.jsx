@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material'
+import { Button, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material'
 import { useEffect, useState } from 'react'
 import axios from "axios";
 import './css/dashboard.css';
@@ -25,15 +25,15 @@ const AdminRequest = () => {
     <Table className='table'>
         <TableHead className="tablehead">
             <TableRow className="tablerow">
-                <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Full Name</TableCell>
-                <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Age</TableCell>
-                <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">E-Mail</TableCell>
-                <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Phone</TableCell>
-                <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Blood Group</TableCell>
-                <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Category</TableCell>
-                <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Units of Blood</TableCell>
-                <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Ailments</TableCell>
-                <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Action</TableCell>
+                <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center"  , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Full Name</TableCell>
+                <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center"  , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Age</TableCell>
+                <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center"  , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">E-Mail</TableCell>
+                <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center"  , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Phone</TableCell>
+                <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center"  , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Blood Group</TableCell>
+                <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center"  , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Category</TableCell>
+                <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center"  , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Units of Blood</TableCell>
+                <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center"  , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Ailments</TableCell>
+                <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center"  , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Action</TableCell>
             </TableRow>
         </TableHead>
         <TableBody className="tablehead">
@@ -47,7 +47,7 @@ const AdminRequest = () => {
                     <TableCell className="tablecell">{data.category}</TableCell>
                     <TableCell className="tablecell">{data.unitsofblood}</TableCell>
                     <TableCell className="tablecell">{data.ailments}</TableCell>
-                    <TableCell className="tablecell"><button className="btn btn-success" onClick={()=>{axios.post('https://bloodbankserver.onrender.com/user/verify',{email:data.email}).then((response)=>{console.log(response.data);window.location.reload();})}}>Verify</button></TableCell>
+                    <TableCell className="tablecell"><Button color="success" variant="contained">Accept</Button>&nbsp;&nbsp;&nbsp;&nbsp;<Button color="error" variant="contained">Decline</Button></TableCell>
                 </TableRow>
             })}
         </TableBody>

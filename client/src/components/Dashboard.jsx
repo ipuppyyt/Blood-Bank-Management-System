@@ -25,14 +25,14 @@ const Dashboard = () => {
         <Table className='table'>
             <TableHead className="tablehead">
                 <TableRow className="tablerow">
-                    <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Full Name</TableCell>
-                    <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Age</TableCell>
-                    <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">E-Mail</TableCell>
-                    <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Phone</TableCell>
-                    <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Blood Group</TableCell>
-                    <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Category</TableCell>
-                    <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Units of Blood</TableCell>
-                    <TableCell style={{fontWeight:"bold" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Ailments</TableCell>
+                    <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center"  , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Full Name</TableCell>
+                    <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center"  , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Age</TableCell>
+                    <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center"  , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">E-Mail</TableCell>
+                    <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center"  , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Phone</TableCell>
+                    <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center"  , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Blood Group</TableCell>
+                    <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center"  , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Category</TableCell>
+                    <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center"  , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Units of Blood</TableCell>
+                    <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center"  , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Ailments</TableCell>
                 </TableRow>
             </TableHead>
             <TableBody className="tablehead">

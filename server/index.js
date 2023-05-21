@@ -73,6 +73,11 @@ app.get('/user/view/pendingverification', async (req, res) => {
     res.json(result);
 });
 
+app.get('/user/count/pendingverification', async (req, res) => {
+    var result = await pendingVerification.countDocuments();
+    res.json(result);
+});
+
 
 // ************************************** Admin Verified View **************************************
 app.get('/user/view/adminverified', async (req, res) => {

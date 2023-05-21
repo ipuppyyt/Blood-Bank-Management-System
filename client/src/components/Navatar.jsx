@@ -33,6 +33,10 @@ const Navatar = () => {
   };
 
 
+  //get the number of requests
+
+
+
   //navbar button changes on different pages
   const navdisplay = () => {
 

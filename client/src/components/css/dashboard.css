@@ -1,8 +1,8 @@
 .tablediv{
-    width: 1000px;
+    width: auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 50px;
+    margin-right: 50px;
     justify-content: center;
     align-items: center;
     color: white;
@@ -27,7 +27,7 @@
     background-color: #d1d1d13f;
     font-weight: bold;
     color: rgb(0, 0, 0);
-    width: 50px;
+    width: auto;
     text-align: center;
     align-items: center;
 }
@@ -35,14 +35,15 @@
 .tablerow{
     background-color: #d1d1d13f;
     color: white;
-    width: 100px;
+    width: auto;
     text-align: center;
     align-items: center;
 }
 .tablecell{
+    margin: 0 auto;
     text-align: center;
     align-items: center;
-    width: 100px;
+    width: auto;
     color: rgb(0, 0, 0);
     border: 1px solid rgb(255, 255, 255);
 }

@@ -73,6 +73,8 @@ app.get('/user/view/pendingverification', async (req, res) => {
     res.json(result);
 });
 
+
+// ************************************** Pending Verification User Count **************************************
 app.get('/user/count/pendingverification', async (req, res) => {
     var result = await pendingVerification.countDocuments();
     res.json(result);
@@ -85,6 +87,12 @@ app.get('/user/view/adminverified', async (req, res) => {
     res.json(result);
 });
 
+
+// ******************** Admin Decline And Delete From Pending Verification **************************************
+app.post('/user/delete/pendingverification', async (req, res) => {
+    var result = await pendingVerification.findByIdAndDelete(req.body._id);
+    res.send("User Declined.")
+})
 
 
 

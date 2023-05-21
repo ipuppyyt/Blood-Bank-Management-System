@@ -19,6 +19,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import Badge from '@mui/material/Badge';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Navatar = () => {
 
@@ -34,6 +35,13 @@ const Navatar = () => {
 
 
   //get the number of requests
+  var [countofpending,setValue]=React.useState([])
+  React.useEffect(()=>{
+      axios.get('https://bloodbankserver.onrender.com/user/count/pendingverification').then((response)=>{
+          console.log(response.data);
+          setValue(response.data);
+      });
+  },[])
 
 
 
@@ -158,7 +166,7 @@ const Navatar = () => {
 
     else if (window.location.pathname === "/admin/dashboard") {
       let retnav = (<div><div className="dash-btn-left"><Link to="/admin/requests"><Button style={{ backgroundColor: blue[500], fontWeight: "bolder" }} variant="contained">
-        <Badge badgeContent={4} color="primary" />
+        <Badge badgeContent={countofpending} color="primary" />
         &nbsp;&nbsp;&nbsp;Requests</Button></Link>
       &nbsp;&nbsp;</div><div className="dash-avatarr">
         <React.Fragment>

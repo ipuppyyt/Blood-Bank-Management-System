@@ -17,6 +17,14 @@ const AdminRequest = () => {
   },[])
 
 
+  const deleteuser=(id)=>{
+      axios.post(`https://bloodbankserver.onrender.com/user/delete/${id}`).then((response)=>{
+          console.log(response.data);
+          window.location.reload();
+      })
+  }
+
+
   return (
     <div>
     <Navatar />
@@ -47,7 +55,7 @@ const AdminRequest = () => {
                     <TableCell className="tablecell">{data.category}</TableCell>
                     <TableCell className="tablecell">{data.unitsofblood}</TableCell>
                     <TableCell className="tablecell">{data.ailments}</TableCell>
-                    <TableCell className="tablecell"><Button color="success" variant="contained">Accept</Button>&nbsp;&nbsp;&nbsp;&nbsp;<Button color="error" variant="contained">Decline</Button></TableCell>
+                    <TableCell className="tablecell"><Button color="success" variant="contained">Accept</Button>&nbsp;&nbsp;&nbsp;&nbsp;<Button color="error" variant="contained" >Decline</Button></TableCell>
                 </TableRow>
             })}
         </TableBody>

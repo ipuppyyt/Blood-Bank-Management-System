@@ -29,10 +29,10 @@ const AdminRequest = () => {
 
 
   const acceptrequest=(data)=>{
-    axios.post(`http://localhost:5000/user/new/adminverification`,data).then((response)=>{
+    axios.post(`https://bloodbankserver.onrender.com/user/new/adminverification`,data).then((response)=>{
         console.log(response.data);
   })
-  axios.post(`http://localhost:5000/user/delete/pendingverification`,data).then((response)=>{
+  axios.post(`https://bloodbankserver.onrender.com/user/delete/pendingverification`,data).then((response)=>{
     const newvalue=value.filter((v)=>{return v._id !== data._id})
     setValue(newvalue);
 })

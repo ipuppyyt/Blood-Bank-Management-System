@@ -17,12 +17,13 @@ const AdminRequest = () => {
   },[])
 
 
-  // const [reloadKey, setReloadKey] = useState(0);
+
   const deleteuser=(id)=>{
       const data ={_id : id};
+      const newvalue=value.filter((data)=>{return data._id !== id})
       axios.post(`https://bloodbankserver.onrender.com/user/delete/pendingverification`,data).then((response)=>{
           console.log(response.data);
-        //setReloadKey(reloadKey + 1);
+            setValue(newvalue);
           //window.location.reload();
       })
   }
@@ -58,7 +59,7 @@ const AdminRequest = () => {
                     <TableCell className="tablecell">{data.category}</TableCell>
                     <TableCell className="tablecell">{data.unitsofblood}</TableCell>
                     <TableCell className="tablecell">{data.ailments}</TableCell>
-                    <TableCell className="tablecell"><Button color="success" variant="contained">Accept</Button>&nbsp;&nbsp;&nbsp;&nbsp;<Button color="error" variant="contained" onClick={deleteuser}>Decline</Button></TableCell>
+                    <TableCell className="tablecell"><Button color="success" variant="contained">Accept</Button>&nbsp;&nbsp;&nbsp;&nbsp;<Button color="error" variant="contained" onClick={()=>{deleteuser(data._id)}}>Decline</Button></TableCell>
                 </TableRow>
             })}
         </TableBody>

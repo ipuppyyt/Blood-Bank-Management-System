@@ -8,16 +8,19 @@ import axios from 'axios';
 
 
 
+
 const Add = () => {
     const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
-
+    const [reload, setReload] = useState(false);
+    
     const {register,handleSubmit} = useForm();
     const submitApplication= (data) => {
       console.log(data);
       axios.post('https://bloodbankserver.onrender.com/user/addperson',data).then((res) => {
         console.log(res);
         alert(data.name + " Successfully Applied");
+        setReload(!reload);
       }).catch((err) => {
         console.log(err);
         alert("Signup Failed");
@@ -46,6 +49,7 @@ const Add = () => {
             <animated.div style={props}>
                 <div className='add-form-main-div center'>
                     <br></br><br></br><br></br><br></br>
+                    
                     <form>
                         <div className='login-text-box-main'>
                             <TextField className='login-text-box' type='text' name="name" id="name" {...register('name')} label="Full Name" variant="outlined" required />&nbsp;&nbsp;&nbsp;&nbsp;

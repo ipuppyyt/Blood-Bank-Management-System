@@ -97,8 +97,9 @@ app.post('/user/delete/pendingverification', async (req, res) => {
 
 // ******************** Admin Accept And Delete From Pending Verification **************************************
 app.post('/user/new/adminverification', async (req, res) => {
-    const request = new adminVerified(req.body);
-    request.save();
+    const request = await new adminVerified(req.body);
+     request.save();
+    res.send("User Accepted.")
 })
 
 

@@ -24,9 +24,19 @@ const AdminRequest = () => {
       axios.post(`https://bloodbankserver.onrender.com/user/delete/pendingverification`,data).then((response)=>{
           console.log(response.data);
             setValue(newvalue);
-          //window.location.reload();
       })
   }
+
+
+  const acceptrequest=(data)=>{
+    axios.post(`http://localhost:5000/user/new/adminverification`,data).then((response)=>{
+        console.log(response.data);
+  })
+  axios.post(`http://localhost:5000/user/delete/pendingverification`,data).then((response)=>{
+    const newvalue=value.filter((v)=>{return v._id !== data._id})
+    setValue(newvalue);
+})
+}
 
 
   return (
@@ -59,7 +69,7 @@ const AdminRequest = () => {
                     <TableCell className="tablecell">{data.category}</TableCell>
                     <TableCell className="tablecell">{data.unitsofblood}</TableCell>
                     <TableCell className="tablecell">{data.ailments}</TableCell>
-                    <TableCell className="tablecell"><Button color="success" variant="contained">Accept</Button>&nbsp;&nbsp;&nbsp;&nbsp;<Button color="error" variant="contained" onClick={()=>{deleteuser(data._id)}}>Decline</Button></TableCell>
+                    <TableCell className="tablecell"><Button color="success" variant="contained" onClick={()=>{acceptrequest(data)}}>Accept</Button>&nbsp;&nbsp;&nbsp;&nbsp;<Button color="error" variant="contained" onClick={()=>{deleteuser(data._id)}}>Decline</Button></TableCell>
                 </TableRow>
             })}
         </TableBody>

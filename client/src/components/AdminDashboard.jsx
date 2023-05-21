@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material'
+import { Button, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material'
 import { useEffect, useState } from 'react'
 import axios from "axios";
 import './css/dashboard.css';
@@ -46,6 +46,7 @@ const AdminDashboard = () => {
                         <TableCell className="tablecell">{data.category}</TableCell>
                         <TableCell className="tablecell">{data.unitsofblood}</TableCell>
                         <TableCell className="tablecell">{data.ailments}</TableCell>
+                        <TableCell className="tablecell"><Button color="warning" variant="contained">Update</Button></TableCell>
                     </TableRow>
                 })}
             </TableBody>

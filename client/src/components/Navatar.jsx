@@ -25,6 +25,11 @@ const Navatar = () => {
 
   const navigate = useNavigate();
 
+
+
+
+  
+
   //logout function
   const logoutfn = () => {
     localStorage.removeItem("authenticated");
@@ -93,7 +98,7 @@ const Navatar = () => {
               <IconButton onClick={handleClick} size="small" sx={{ ml: 2 }}
                 aria-controls={open ? "account-menu" : undefined} aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}>
-                <Avatar sx={{ width: 40, height: 40 }}>M</Avatar>
+                <Avatar sx={{ width: 40, height: 40 }} alt="{}" src="/" />
               </IconButton>
             </Tooltip>
           </Box>
@@ -113,8 +118,8 @@ const Navatar = () => {
             }}
             transformOrigin={{ horizontal: "right", vertical: "top" }}
             anchorOrigin={{ horizontal: "right", vertical: "bottom" }}>
-            <MenuItem onClick={handleClose}>
-                  <Link to="/user/profile"><ListItemIcon><AccountCircleIcon /></ListItemIcon>Profile</Link>
+            <MenuItem>
+                  <ListItemIcon><AccountCircleIcon /></ListItemIcon>Profile
                 </MenuItem>
             <Divider />
             <MenuItem onClick={logoutfn}>

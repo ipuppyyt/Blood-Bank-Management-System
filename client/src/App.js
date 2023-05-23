@@ -3,10 +3,8 @@ import Login from "./components/Login";
 import Navbar from './components/Navbar';
 import Signup from "./components/Signup";
 import Dashboard from "./components/Dashboard";
-import Profile from "./components/Profile";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
-import Editprofile from "./components/Editprofile";
 import AdminDashboard from "./components/AdminDashboard";
 import AdminLogin from "./components/AdminLogin";
 import AdminAddDonor from "./components/AdminAddDonor";
@@ -53,9 +51,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/user/dashboard" element={<Dashboard />} />
-          <Route path="/user/profile" element={<Profile />} />
-          <Route path="/user/editprofile" element={<Editprofile />} />
           <Route path="/user/apply" element={<Add />} />
+
+
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/adddonor" element={<AdminAddDonor />} />

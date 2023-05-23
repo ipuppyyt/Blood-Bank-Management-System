@@ -102,6 +102,8 @@ app.post('/user/new/adminverification', async (req, res) => {
 
 
 
+
+
 //Update
 // app.post('/course/update', async (req, res) => {
 //     var result = await userData.findByIdAndUpdate(req.body._id, req.body);

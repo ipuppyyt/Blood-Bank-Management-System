@@ -18,10 +18,20 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import Badge from '@mui/material/Badge';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Navatar = () => {
+
+  const navigate = useNavigate();
+
+  //logout function
+  const logoutfn = () => {
+    localStorage.removeItem("authenticated");
+    localStorage.removeItem("token");
+    navigate('/');
+  };
+
 
   //navbar dashboard menu control
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -107,7 +117,7 @@ const Navatar = () => {
                   <Link to="/user/profile"><ListItemIcon><AccountCircleIcon /></ListItemIcon>Profile</Link>
                 </MenuItem>
             <Divider />
-            <MenuItem onClick={handleClose}>
+            <MenuItem onClick={logoutfn}>
               <ListItemIcon><LogoutIcon fontSize="small" /></ListItemIcon>Logout
             </MenuItem>
           </Menu>
@@ -152,7 +162,7 @@ const Navatar = () => {
                   <Link to="/user/profile"><ListItemIcon><AccountCircleIcon /></ListItemIcon>Profile</Link>
                 </MenuItem>
                 <Divider />
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={logoutfn}>
                   <ListItemIcon><LogoutIcon fontSize="small" /></ListItemIcon>Logout
                 </MenuItem>
               </Menu>
@@ -195,7 +205,7 @@ const Navatar = () => {
             }}
             transformOrigin={{ horizontal: "right", vertical: "top" }}
             anchorOrigin={{ horizontal: "right", vertical: "bottom" }}>
-            <MenuItem onClick={handleClose}>
+            <MenuItem onClick={logoutfn}>
               <ListItemIcon><LogoutIcon fontSize="small" /></ListItemIcon>Logout
             </MenuItem>
           </Menu>
@@ -236,7 +246,7 @@ const Navatar = () => {
             }}
             transformOrigin={{ horizontal: "right", vertical: "top" }}
             anchorOrigin={{ horizontal: "right", vertical: "bottom" }}>
-            <MenuItem onClick={handleClose}>
+            <MenuItem onClick={logoutfn}>
               <ListItemIcon><LogoutIcon fontSize="small" /></ListItemIcon>Logout
             </MenuItem>
           </Menu>

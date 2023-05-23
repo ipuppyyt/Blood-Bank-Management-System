@@ -6,7 +6,8 @@ const pendingVerification = require('./model/pendingVerificationDB');
 const adminVerified = require('./model/adminVerified');
 const res = require('express/lib/response');
 const cors = require('cors');
-
+require('dotenv').config()
+const loginRouter = require('./uncontroller/login')
 
 // 2. Initializing new express application
 const app = new express();
@@ -14,19 +15,15 @@ const app = new express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors())
+app.use('/user/login', loginRouter)
+
+
 
 // 3.  API creation
 app.get('/', (req, res) => {
     res.send("Server is UP and running.");
 });
 
-app.get('/json', (req, res) => {
-    res.json([{ "name": "Dhanush", "place": "Trivandrum", "age": 21 }])
-});
-
-app.post('/facebook/signup', (req, res) => {
-    res.send(`Account successfully created ${req.body.fname} ${req.body.lname} `);
-})
 
 // ************************************** New User SignUp **************************************
 app.post('/user/create', (req, res) => {

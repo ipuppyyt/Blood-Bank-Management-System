@@ -32,7 +32,8 @@ app.post('/user/create', (req, res) => {
         console.log("Password does not match.");
     }
     else {
-        userinfo.save();
+        let a= userinfo.save();
+        console.log(a);
         console.log("User Successfully Added.")
         res.send("User Successfully Added.")
     }

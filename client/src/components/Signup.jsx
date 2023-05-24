@@ -23,7 +23,7 @@ const Signup = () => {
             console.log(data);
             axios.post('https://bloodbankserver.onrender.com/user/create', data).then((res) => {
               navigate('/login');
-              alert("Signup Successful");
+              alert(res.data);
             })
           }
         }

@@ -26,17 +26,17 @@ app.get('/', (req, res) => {
 
 
 // ************************************** New User SignUp **************************************
-app.post('/user/create', (req, res) => {
+app.post('/user/create', async (req, res) => {
     var userinfo = new userData(req.body);
     if (req.body.userPassword != req.body.userConfirmPassword) {
         console.log("Password does not match.");
     }
     else {
-         userinfo.save((err, a) => {
-            console.log(err);
-        });
-        console.log("User Successfully Added.")
-        res.send("User Successfully Added.")
+        await userinfo.save().then(() => {
+            console.log("User Successfully Added.")
+            res.send("User Added.")
+        }).catch((err) => (console.log(err),
+            res.status(401).send("Duplicate Email.")));
     }
 })
 
@@ -44,19 +44,19 @@ app.post('/user/create', (req, res) => {
 // ************************************** User Donate/Receive Apply **************************************
 app.post('/user/addperson', (req, res) => {
     var unapproved = new pendingVerification(req.body);
-        unapproved.save();
-        console.log(req.body.name + " Successfully Added.");
-        res.send(req.body.name + " Successfully Added.")
-    })
+    unapproved.save();
+    console.log(req.body.name + " Successfully Added.");
+    res.send(req.body.name + " Successfully Added.")
+})
 
 
 // ************************************** Add Donor By Admin **************************************
 app.post('/admin/adddonor', (req, res) => {
     var donoraddedbyadmin = new adminVerified(req.body);
-        donoraddedbyadmin.save();
-        console.log(req.body.name + " Successfully Added.");
-        res.send(req.body.name + " Successfully Added.")
-    })
+    donoraddedbyadmin.save();
+    console.log(req.body.name + " Successfully Added.");
+    res.send(req.body.name + " Successfully Added.")
+})
 
 
 
@@ -98,7 +98,7 @@ app.post('/user/delete/pendingverification', async (req, res) => {
 // ******************** Admin Accept And Delete From Pending Verification **************************************
 app.post('/user/new/adminverification', async (req, res) => {
     const request = await new adminVerified(req.body);
-     request.save();
+    request.save();
     res.send("User Accepted.")
 })
 

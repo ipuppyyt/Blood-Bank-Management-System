@@ -34,9 +34,9 @@ app.post('/user/create', async (req, res) => {
     else {
         await userinfo.save().then(() => {
             console.log("User Successfully Added.")
-            res.send("User Added.")
+            res.json({"success": true})
         }).catch((err) => (console.log(err),
-            res.send("Duplicate Email.")));
+            res.send("Email Already Exists")));
     }
 })
 

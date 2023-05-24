@@ -50,7 +50,7 @@ const Navatar = () => {
 
 
   //get the number of requests
-  var [countofpending,setValue]=React.useState([])
+  var [countofpending,setValue]=React.useState([0])
   React.useEffect(()=>{
       axios.get('https://bloodbankserver.onrender.com/user/count/pendingverification').then((response)=>{
           console.log(response.data);

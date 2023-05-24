@@ -10,7 +10,7 @@ mongoose.connect("mongodb+srv://Full_Stack_Internship:fullstack@fullstack.z46xga
 const Schema = mongoose.Schema;
 const userdataSchema = new Schema({
     userName:String,
-    userEmail:String,
+    userEmail:{type:String,unique:true},
     userPassword:String,
     userPhone:Number,
     userAvatar:String

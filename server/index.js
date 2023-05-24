@@ -34,6 +34,7 @@ app.post('/user/create', (req, res) => {
     else {
         userinfo.save();
         console.log("User Successfully Added.")
+        res.send("User Successfully Added.")
     }
 })
 

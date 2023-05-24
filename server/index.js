@@ -36,7 +36,7 @@ app.post('/user/create', async (req, res) => {
             console.log("User Successfully Added.")
             res.send("User Added.")
         }).catch((err) => (console.log(err),
-            res.status(401).send("Duplicate Email.")));
+            res.send("Duplicate Email.")));
     }
 })
 

@@ -24,9 +24,12 @@ const Signup = () => {
             axios.post('https://bloodbankserver.onrender.com/user/create', data).then((res) => {
               navigate('/login');
               alert(res.data);
+            }).catch((err) => {
+              alert("Email already exists.");
+              console.log(err);
             })
-          }
         }
+      }
 
 
     return (

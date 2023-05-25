@@ -222,7 +222,7 @@ const Navatar = () => {
 
 
     //Admin Request NavIcon
-    else if (window.location.pathname === "/admin/requests") {
+    else if (window.location.pathname === "/admin/requests" || window.location.pathname === "/admin/adddonor") {
       let retnav = (<div><div className="dash-btn-left"><Link to="/admin/dashboard"><Button style={{ backgroundColor: blue[500], fontWeight: "bolder" }} variant="contained"><DashboardIcon style={{ fontSize: "medium" }}/>&nbsp;Dashboard</Button></Link>
       &nbsp;&nbsp;</div><div className="dash-avatarr">
         <React.Fragment>

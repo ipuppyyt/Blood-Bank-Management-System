@@ -8,6 +8,7 @@ const res = require('express/lib/response');
 const cors = require('cors');
 require('dotenv').config()
 const loginRouter = require('./uncontroller/login')
+const adminloginRouter = require('./uncontroller/adminlogin')
 
 // 2. Initializing new express application
 const app = new express();
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors())
 app.use('/user/login', loginRouter)
+app.use('/admin/login', adminloginRouter)
 
 
 

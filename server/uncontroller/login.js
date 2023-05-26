@@ -9,7 +9,6 @@ loginRouter.post('/', async (request, response) => {
     console.log(userEmail)
   try{
   const user = await User.findOne({ userEmail : userEmail })
-  const userName = await User.findOne({ userName : userName })
   console.log(`User : ${user}`)
   console.log(`Password : ${user.userPassword}`)
   const passwordCorrect = user === null
@@ -24,12 +23,12 @@ loginRouter.post('/', async (request, response) => {
   console.log("Password ✅")
 
   const userForToken = {
-    userName: userName,
     userEmail: user.userEmail,
     id: user._id,
   }
 
   const token = jwt.sign(userForToken, process.env.SECRET)
+  const userName = await User.findOne({ userName : userName })
 
   response
     .status(200)

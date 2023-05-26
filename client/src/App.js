@@ -12,6 +12,7 @@ import Add from "./components/Add";
 import { useEffect, useState } from "react";
 import './components/css/preloader.css';
 import AdminRequest from "./components/AdminRequest";
+import AdminUpdate from "./components/AdminUpdate";
 
 
 function App() {
@@ -58,7 +59,7 @@ function App() {
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/adddonor" element={<AdminAddDonor />} />
           <Route path="/admin/requests" element={<AdminRequest />} />
-          
+          <Route path="/admin/update" element={<AdminUpdate />} />
 
         </Routes>
         <Footer />

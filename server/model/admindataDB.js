@@ -9,9 +9,9 @@ mongoose.connect("mongodb+srv://Full_Stack_Internship:fullstack@fullstack.z46xga
 //3. Schema Creation
 const Schema = mongoose.Schema;
 const admindataSchema = new Schema({
-    userName:String,
-    userEmail:{type:String,unique:true},
-    userPassword:String
+    adminName:String,
+    adminEmail:{type:String,unique:true},
+    adminPassword:String
 });
 
 

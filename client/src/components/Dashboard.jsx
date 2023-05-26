@@ -12,7 +12,7 @@ const Dashboard = () => {
     const navigate = useNavigate();
 
     const reroute = () => {
-    if (localStorage.getItem('user') === null) {
+    if (localStorage.getItem('token') === null) {
         navigate('/login');
     }
     }

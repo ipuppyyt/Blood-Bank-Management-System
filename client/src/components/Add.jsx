@@ -5,12 +5,23 @@ import { useSpring, animated } from 'react-spring';
 import Navatar from './Navatar';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 const Add = () => {
     const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+
+
+     const navigate = useNavigate();
+
+    const reroute = () => {
+    if (localStorage.getItem('token') === null) {
+        navigate('/login');
+    }
+    }
+
 
     const [reload, setReload] = useState(false);
     
@@ -26,8 +37,6 @@ const Add = () => {
         alert("Signup Failed");
       })
     }
-  
-
     
     // Enable number of units of blood dropdown based on the selected value of the category dropdown
     const [firstSelectValue, setFirstSelectValue] = useState('');
@@ -42,9 +51,10 @@ const Add = () => {
       const value = event.target.value;
       setSecondSelectValue(value);
     };
-  
+
     return (
         <div>
+            {reroute()}
             <Navatar />
             <animated.div style={props}>
                 <div className='add-form-main-div center'>
@@ -222,6 +232,5 @@ const Add = () => {
         </div>
     )
 }
-
 
 export default Add

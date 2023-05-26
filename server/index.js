@@ -104,8 +104,19 @@ app.post('/user/new/adminverification', async (req, res) => {
     res.send("User Accepted.")
 })
 
+// ******************** Admin Delete From Admin Verified **************************************
+app.post('/admin/delete/adminverified', async (req, res) => {
+    var result = await adminVerified.findByIdAndDelete(req.body._id);
+    res.send("User Deleted.")
+})
 
-
+// ******************** Admin Update From Admin Verified **************************************
+app.post('/admin/update/adminverified', async (req,res)=>{
+    console.log(`id is ${req.body._id}`)
+    console.log(req.body)
+    await verfiedRequest.findByIdAndUpdate(req.body._id,req.body)
+    res.send("successfully updated")
+  })
 
 
 

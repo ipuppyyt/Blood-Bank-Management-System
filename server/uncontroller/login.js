@@ -10,7 +10,8 @@ loginRouter.post('/', async (request, response) => {
   try{
   const user = await User.findOne({ userEmail : userEmail  })
   if(!user){
-    alert("User not found")
+    response.send("User not found");
+    return alert("User not found");
     }
   console.log(`User : ${user}`)
   console.log(`Password : ${user.userPassword}`)

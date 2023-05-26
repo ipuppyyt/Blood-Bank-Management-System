@@ -8,7 +8,7 @@ adminloginRouter.post('/', async (request, response) => {
   const { adminEmail, adminPassword } = request.body
     console.log(adminEmail)
   try{
-  const admin = await Admin.findOne({ userEmail : userEmail })
+  const admin = await Admin.findOne({ adminEmail : adminEmail })
   console.log(`Admin : ${admin}`)
   console.log(`Password : ${admin.adminPassword}`)
   const passwordCorrect = admin === null

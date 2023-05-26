@@ -8,7 +8,7 @@ loginRouter.post('/', async (request, response) => {
   const { userEmail, userPassword } = request.body
     console.log(userEmail)
   try{
-  const user = await User.findOne({ userEmail : userEmail })
+  const user = await User.findOne({ userEmail : userEmail  })
   console.log(`User : ${user}`)
   console.log(`Password : ${user.userPassword}`)
   const passwordCorrect = user === null
@@ -28,7 +28,6 @@ loginRouter.post('/', async (request, response) => {
   }
 
   const token = jwt.sign(userForToken, process.env.SECRET)
-  const userName = await User.findOne({ userName : userName })
 
   response
     .status(200)

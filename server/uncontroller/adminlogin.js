@@ -20,7 +20,7 @@ adminloginRouter.post('/', async (request, response) => {
       error: 'Invalid username or password.'
     })
   }
-  console.log("Password ✅")
+  console.log("Password is ✅")
 
   const adminForToken = {
     adminEmail: admin.adminEmail,

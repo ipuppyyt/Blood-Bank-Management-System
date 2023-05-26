@@ -5,8 +5,17 @@ import axios from "axios";
 import './css/dashboard.css';
 import './css/fonts.css'
 import Navatar from "./Navatar";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+
+    const navigate = useNavigate();
+
+    const reroute = () => {
+    if (localStorage.getItem('user') === null) {
+        navigate('/login');
+    }
+    }
 
   var [value,setValue]=useState([])
   useEffect(()=>{
@@ -19,6 +28,7 @@ const Dashboard = () => {
 
   return (
     <div>
+        {reroute()}
         <Navatar />
       <div className="tablediv"><br></br>
       <br></br><br></br><br></br>

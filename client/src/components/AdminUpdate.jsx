@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/login.css';
 import { Button, TextField } from '@mui/material';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
 import Navatar from './Navatar';
 import { useForm } from 'react-hook-form';
@@ -11,14 +11,13 @@ const AdminUpdate = () => {
     const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
     const { register, handleSubmit } = useForm()
-    const location = useLocation();
-    console.log('location', location)
-    const user = location.state.user
-    console.log(user.userfName)
+    const location = useLocation(); 
+
+    const user = location.state.user;
     const handleUpdate = (data) => {
         data = { ...data, _id: user._id }
         console.log(`request data is: ${data._id}`)
-        axios.post('http://localhost:5000/verified/request/update', data).then((res) => {
+        axios.post('https://bloodbankserver.onrender.com/admin/update/adminverified', data).then((res) => {
             console.log(res)
             alert('Request Updated Successfully')
         })

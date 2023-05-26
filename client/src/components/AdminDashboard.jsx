@@ -8,6 +8,15 @@ import Navatar from "./Navatar";
 
 const AdminDashboard = () => {
 
+    const deleteuser=(id)=>{
+        const data ={_id : id};
+        const newvalue=value.filter((data)=>{return data._id !== id})
+        axios.post(`https://bloodbankserver.onrender.com/admin/delete/adminverified`,data).then((response)=>{
+            console.log(response.data);
+              setValue(newvalue);
+        })
+    }
+
     var [value,setValue]=useState([])
     useEffect(()=>{
         axios.get('https://bloodbankserver.onrender.com/user/view/adminverified').then((response)=>{
@@ -46,7 +55,7 @@ const AdminDashboard = () => {
                         <TableCell className="tablecell">{data.category}</TableCell>
                         <TableCell className="tablecell">{data.unitsofblood}</TableCell>
                         <TableCell className="tablecell">{data.ailments}</TableCell>
-                        <TableCell className="tablecell"><Button color="warning" variant="contained">Update</Button></TableCell>
+                        <TableCell className="tablecell"><Button color="warning" variant="contained">Update</Button>&nbsp;<Button color="error" variant="contained" onClick={()=>{deleteuser(data._id)}}>Delete</Button></TableCell>
                     </TableRow>
                 })}
             </TableBody>

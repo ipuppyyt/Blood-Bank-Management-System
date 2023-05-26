@@ -18,6 +18,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import Badge from '@mui/material/Badge';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -66,7 +67,7 @@ const Navatar = () => {
     //Home NavIcon
 
     if (window.location.pathname === "/") {
-      let retnav = (<div className="dash-btn"><Link to="/signup"><Button style={{ backgroundColor: blue[500], fontWeight: "bolder" }} variant="contained"><HowToRegIcon style={{ fontSize: "medium" }}></HowToRegIcon>&nbsp;SignUp</Button></Link>
+      let retnav = (<div className="dash-btn"><Link to="/admin/login"><Button style={{ backgroundColor: blue[500], fontWeight: "bolder" }} variant="contained"><AdminPanelSettingsIcon  style={{ fontSize: "medium" }} />&nbsp;Admin Panel</Button></Link>
         &nbsp;&nbsp;<Link to="/login"><Button style={{ backgroundColor: blue[500], fontWeight: "bolder" }} variant="contained"><ExitToAppIcon style={{ fontSize: "medium" }}></ExitToAppIcon>&nbsp;Login</Button></Link></div>);
       return retnav;
     }

@@ -46,7 +46,7 @@ const AdminDashboard = () => {
                         <TableCell className="tablecell">{data.category}</TableCell>
                         <TableCell className="tablecell">{data.unitsofblood}</TableCell>
                         <TableCell className="tablecell">{data.ailments}</TableCell>
-                        <TableCell className="tablecell"><Button color="warning" variant="contained">Update</Button></TableCell>
+                        <TableCell className="tablecell"><Button color="warning" variant="contained" >Update</Button></TableCell>
                     </TableRow>
                 })}
             </TableBody>

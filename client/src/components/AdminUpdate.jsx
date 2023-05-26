@@ -1,41 +1,31 @@
 import React from 'react';
 import './css/login.css';
 import { Button, TextField } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
 import Navatar from './Navatar';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import { toast } from 'react-hot-toast';
 
 const AdminUpdate = () => {
     const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
     const navigate = useNavigate();
-    
-    const { register, handleSubmit } = useForm();
-  const submitSignup = (data) => {
-          if (document.getElementById('userPassword').value !== document.getElementById('userConfirmPassword').value) {
-            console.log(document.getElementById('userPassword').value);
-            console.log(document.getElementById('userConfirmPassword').value);
-            alert("Passwords do not match");
-          }
-          else {
-            console.log(data);
-            axios.post('https://bloodbankserver.onrender.com/user/create', data).then((res) => {
-            console.log(res.data); 
-            if (res.data.success === true)
-              {
-              navigate('/login');
-              }
-              else{
-              alert(res.data);
-              }
-            }).catch((err) => {
-              alert("Email already exists.");
-              console.log(err);
-            })
-        }
-      }
+
+      const {register, handleSubmit} = useForm()
+    const location = useLocation();
+    console.log('location',location)
+    const user = location.state.user
+    console.log(user.userfName)
+    const updateUserbyAdmin = (data) => {
+      data = {...data,_id:user._id}
+      console.log(`request data is: ${data._id}`)
+      axios.post('http://localhost:5000/verified/request/update',data).then((res)=>{
+          console.log(res)
+          toast.success("Updated user")
+      })
+  
 
   return (
     <div>
@@ -54,10 +44,9 @@ const AdminUpdate = () => {
                 <TextField className='login-text-box' type='password' name='userConfirmPassword' {...register('userConfirmPassword')} id="userConfirmPassword" label="Retype Password" variant="outlined" required />
               </div>
               <div className='login-text-box-main'>
-                <Button type='submit' className='login-page-button' variant="contained" style={{ fontWeight: "bold" }} onClick={handleSubmit(submitSignup)}>Signup</Button>
+                <Button type='submit' className='login-page-button' variant="contained" style={{ fontWeight: "bold" }} onClick={handleSubmit(updateUserbyAdmin)}>Signup</Button>
               </div>
               <div className='login-text-box-main'>
-                <Link to='/login' className='login-page-link' class="wanttosignup">Already have an account? Login</Link>
               </div>
             </form>
           </div>
@@ -65,6 +54,7 @@ const AdminUpdate = () => {
       </div>
     </div>
   )
+}
 }
 
 export default AdminUpdate

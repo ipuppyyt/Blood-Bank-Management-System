@@ -104,17 +104,13 @@ app.post('/user/new/adminverification', async (req, res) => {
     res.send("User Accepted.")
 })
 
-
-
-
-
-
-//Update
-// app.post('/course/update', async (req, res) => {
-//     var result = await userData.findByIdAndUpdate(req.body._id, req.body);
-//     res.send("Course Successfully Updated.")
-// })
-
+// ******************** Admin Update From Admin Verified **************************************
+app.post('/admin/verified/delete', async (req,res)=>{
+    console.log(`id is ${req.body._id}`)
+    console.log(req.body)
+    await verfiedRequest.findByIdAndUpdate(req.body._id,req.body)
+    res.send("successfully updated")
+  })
 
 
 // 4. Setting port number

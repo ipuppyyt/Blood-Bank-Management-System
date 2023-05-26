@@ -8,7 +8,7 @@ loginRouter.post('/', async (request, response) => {
   const { userEmail, userPassword } = request.body
     console.log(userEmail)
   try{
-  const user = await User.findOne({ userEmail : userEmail })
+  const user = await User.findOne({ userName : userName , userEmail : userEmail })
   console.log(`User : ${user}`)
   console.log(`Password : ${user.userPassword}`)
   const passwordCorrect = user === null
@@ -23,7 +23,7 @@ loginRouter.post('/', async (request, response) => {
   console.log("Password ✅")
 
   const userForToken = {
-    //userName: user.userName,
+    userName: user.userName,
     userEmail: user.userEmail,
     id: user._id,
   }

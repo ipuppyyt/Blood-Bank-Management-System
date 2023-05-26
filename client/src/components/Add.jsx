@@ -13,14 +13,12 @@ import { useNavigate } from 'react-router-dom';
 const Add = () => {
     const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
-     const navigate = useNavigate();
-
+    const navigate = useNavigate();
     const reroute = () => {
     if (localStorage.getItem('token') === null) {
         navigate('/login');
     }
     }
-
 
     const [reload, setReload] = useState(false);
     

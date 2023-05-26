@@ -11,7 +11,6 @@ loginRouter.post('/', async (request, response) => {
   const user = await User.findOne({ userEmail : userEmail  })
   if(!user){
     response.send("User not found");
-    return alert("User not found");
     }
   console.log(`User : ${user}`)
   console.log(`Password : ${user.userPassword}`)
@@ -39,6 +38,7 @@ loginRouter.post('/', async (request, response) => {
     }
     catch(err){
       console.log(err)
+      response.send("Caught Error : User not found");
     }
 })
 

@@ -99,7 +99,7 @@ const Navatar = () => {
               <IconButton onClick={handleClick} size="small" sx={{ ml: 2 }}
                 aria-controls={open ? "account-menu" : undefined} aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}>
-                <Avatar sx={{ width: 40, height: 40 }} alt="{}" src="/" />
+                <Avatar sx={{ width: 40, height: 40 }} alt={loggedInuserName} src="/" />
               </IconButton>
             </Tooltip>
           </Box>
@@ -119,8 +119,8 @@ const Navatar = () => {
             }}
             transformOrigin={{ horizontal: "right", vertical: "top" }}
             anchorOrigin={{ horizontal: "right", vertical: "bottom" }}>
-            <MenuItem>
-                  <ListItemIcon><AccountCircleIcon /></ListItemIcon>Profile
+            <MenuItem disabled>
+                  <ListItemIcon><AccountCircleIcon /></ListItemIcon>{loggedInuserName}
                 </MenuItem>
             <Divider />
             <MenuItem onClick={logoutfn}>
@@ -135,7 +135,7 @@ const Navatar = () => {
 
         //Apply Donor/Receiver NavIcon
 
-        else if (window.location.pathname === "/user/apply" || window.location.pathname === "/user/profile") {
+        else if (window.location.pathname === "/user/apply") {
           let retnav = (<div><div className="dash-btn-left"><Link to="/user/dashboard"><Button style={{ backgroundColor: blue[500], fontWeight: "bolder" }} variant="contained"><DashboardIcon style={{ fontSize: "medium" }}/>&nbsp;Dashboard</Button></Link>
           &nbsp;&nbsp;</div><div className="dash-avatarr">
             <React.Fragment>
@@ -144,7 +144,7 @@ const Navatar = () => {
                   <IconButton onClick={handleClick} size="small" sx={{ ml: 2 }}
                     aria-controls={open ? "account-menu" : undefined} aria-haspopup="true"
                     aria-expanded={open ? "true" : undefined}>
-                    <Avatar sx={{ width: 40, height: 40 }}>M</Avatar>
+                    <Avatar sx={{ width: 40, height: 40 }} alt={loggedInuserName} src="/"></Avatar>
                   </IconButton>
                 </Tooltip>
               </Box>
@@ -164,8 +164,8 @@ const Navatar = () => {
                 }}
                 transformOrigin={{ horizontal: "right", vertical: "top" }}
                 anchorOrigin={{ horizontal: "right", vertical: "bottom" }}>
-                <MenuItem onClick={handleClose}>
-                  <Link to="/user/profile"><ListItemIcon><AccountCircleIcon /></ListItemIcon>Profile</Link>
+                <MenuItem disabled>
+                  <ListItemIcon><AccountCircleIcon /></ListItemIcon>{loggedInuserName}
                 </MenuItem>
                 <Divider />
                 <MenuItem onClick={logoutfn}>

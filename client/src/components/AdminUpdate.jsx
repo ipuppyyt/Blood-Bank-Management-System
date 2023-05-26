@@ -21,7 +21,7 @@ const AdminUpdate = () => {
             console.log(res)
             alert('Request Updated Successfully')
         })
-
+    
 
         return (
             <div>
@@ -40,7 +40,7 @@ const AdminUpdate = () => {
                                     <TextField className='login-text-box' type='password' name='userConfirmPassword' {...register('userConfirmPassword')} id="userConfirmPassword" label="Retype Password" variant="outlined" required />
                                 </div>
                                 <div className='login-text-box-main'>
-                                    <Button type='submit' className='login-page-button' variant="contained" style={{ fontWeight: "bold" }} onClick={handleSubmit(handleUpdate)}>Signup</Button>
+                                    <Button type='submit' className='login-page-button' variant="contained" style={{ fontWeight: "bold" }} onClick={handleSubmit()}>Signup</Button>
                                 </div>
                                 <div className='login-text-box-main'>
                                 </div>

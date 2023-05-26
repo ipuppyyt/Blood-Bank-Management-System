@@ -17,14 +17,14 @@ const AdminDashboard = () => {
         })
     }
 
-    const updateuser=(id)=>{
-        const data ={_id : id};
-        const newvalue=value.filter((data)=>{return data._id !== id})
-        axios.post(`https://bloodbankserver.onrender.com/admin/update/adminverified`,data).then((response)=>{
-            console.log(response.data);
-                setValue(newvalue);
-        })
-    }
+    // const updateuser=(id)=>{
+    //     const data ={_id : id};
+    //     const newvalue=value.filter((data)=>{return data._id !== id})
+    //     axios.post(`https://bloodbankserver.onrender.com/admin/update/adminverified`,data).then((response)=>{
+    //         console.log(response.data);
+    //             setValue(newvalue);
+    //     })
+    // }
 
     var [value,setValue]=useState([])
     useEffect(()=>{

@@ -5,6 +5,7 @@ import { useSpring, animated } from 'react-spring';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Navatar from './Navatar';
 
 const AdminLogin = () => {
     const props = useSpring({ opacity: 1, from: { opacity: -0} });
@@ -28,6 +29,7 @@ const AdminLogin = () => {
 
   return (
     <div>
+      <Navatar />
     <animated.div style={props}>
     <div className='login-form-main-div center'>
       <br></br><br></br><br></br><br></br>

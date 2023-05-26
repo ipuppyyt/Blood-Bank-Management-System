@@ -265,6 +265,12 @@ const Navatar = () => {
       </div>);
       return retnav;
     }
+
+    //Admin Login NavIcon
+    else if (window.location.pathname === "/admin/login") {
+        let retnav = (<div className="dash-btn"><Link to="/"><Button style={{ backgroundColor: blue[500], fontWeight: "bolder" }} variant="contained"><HomeIcon style={{ fontSize: "medium" }}></HomeIcon>&nbsp;Home</Button></Link></div>);
+        return retnav;
+      }
   };
 
   return (

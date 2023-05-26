@@ -19,8 +19,6 @@ const Add = () => {
         navigate('/login');
     }
     }
-
-    const [reload, setReload] = useState(false);
     
     const {register,handleSubmit} = useForm();
     const submitApplication= (data) => {
@@ -28,7 +26,7 @@ const Add = () => {
       axios.post('https://bloodbankserver.onrender.com/user/addperson',data).then((res) => {
         console.log(res);
         alert(data.name + " Successfully Applied");
-        setReload(!reload);
+        navigate('/user/dashboard');
       }).catch((err) => {
         console.log(err);
         alert("Signup Failed");

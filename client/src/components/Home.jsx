@@ -4,11 +4,12 @@ import './css/homebg.css'
 import './css/home.css'
 
 
+
 const Home = () => {
   return (
     <section>
       <Navatar />
-      
+      <img src="https://static.vecteezy.com/system/resources/previews/001/978/288/original/volunteer-collecting-blood-donation-free-vector.jpg" alt="" srcset="" className='bg' />
       <div class='air air1'></div>
       <div class='air air2'></div>
       <div class='air air3'></div>

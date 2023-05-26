@@ -16,6 +16,7 @@ const AdminLogin = () => {
     axios.post('https://bloodbankserver.onrender.com/admin/login',data).then((res) => {
       localStorage.setItem("authenticated", true);
       localStorage.setItem("token",res.data.token);
+      localStorage.setItem("adminName",res.data.admin.adminName);
       console.log(res.data.token.adminEmail);
       console.log(res);
       navigate('/admin/dashboard');

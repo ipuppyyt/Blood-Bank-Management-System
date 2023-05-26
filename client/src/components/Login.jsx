@@ -17,6 +17,7 @@ const Login = () => {
     axios.post('https://bloodbankserver.onrender.com/user/login',data).then((res) => {
       localStorage.setItem("authenticated", true);
       localStorage.setItem("token",res.data.token);
+      localStorage.setItem("userName",res.data.user.userName);
       console.log(res.data.token.userEmail);
       console.log(res);
       navigate('/user/dashboard');

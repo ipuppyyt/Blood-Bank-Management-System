@@ -26,15 +26,15 @@ const Navatar = () => {
 
   const navigate = useNavigate();
 
-
-
-
-  
+  const loggedInadminName = localStorage.getItem("adminName"); 
+  const loggedInuserName = localStorage.getItem("userName"); 
 
   //logout function
   const logoutfn = () => {
     localStorage.removeItem("authenticated");
     localStorage.removeItem("token");
+    localStorage.removeItem("adminName");
+    localStorage.removeItem("userName");
     navigate('/');
   };
 
@@ -191,7 +191,7 @@ const Navatar = () => {
               <IconButton onClick={handleClick} size="small" sx={{ ml: 2 }}
                 aria-controls={open ? "account-menu" : undefined} aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}>
-                <Avatar sx={{ width: 40, height: 40 }}>M</Avatar>
+                <Avatar alt={loggedInadminName} src="/" sx={{ width: 40, height: 40 }} />
               </IconButton>
             </Tooltip>
           </Box>
@@ -211,6 +211,10 @@ const Navatar = () => {
             }}
             transformOrigin={{ horizontal: "right", vertical: "top" }}
             anchorOrigin={{ horizontal: "right", vertical: "bottom" }}>
+            <MenuItem disabled>
+                  <ListItemIcon><AccountCircleIcon /></ListItemIcon>{loggedInadminName}
+            </MenuItem>
+            <Divider />
             <MenuItem onClick={logoutfn}>
               <ListItemIcon><LogoutIcon fontSize="small" /></ListItemIcon>Logout
             </MenuItem>

@@ -17,6 +17,15 @@ const AdminDashboard = () => {
         })
     }
 
+    const updateuser=(id)=>{
+        const data ={_id : id};
+        const newvalue=value.filter((data)=>{return data._id !== id})
+        axios.post(`https://bloodbankserver.onrender.com/admin/update/adminverified`,data).then((response)=>{
+            console.log(response.data);
+                setValue(newvalue);
+        })
+    }
+
     var [value,setValue]=useState([])
     useEffect(()=>{
         axios.get('https://bloodbankserver.onrender.com/user/view/adminverified').then((response)=>{
@@ -41,7 +50,6 @@ const AdminDashboard = () => {
                     <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Blood Group</TableCell>
                     <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Category</TableCell>
                     <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Units Of Blood</TableCell>
-                    <TableCell style={{fontWeight:"bold", fontSize:"16px" , textAlign:"center" , fontFamily:"'PT Sans', sans-serif" }} className="tablecell bold">Ailments</TableCell>
                 </TableRow>
             </TableHead>
             <TableBody className="tablehead">
@@ -54,8 +62,7 @@ const AdminDashboard = () => {
                         <TableCell className="tablecell">{data.bloodgroup}</TableCell>
                         <TableCell className="tablecell">{data.category}</TableCell>
                         <TableCell className="tablecell">{data.unitsofblood}</TableCell>
-                        <TableCell className="tablecell">{data.ailments}</TableCell>
-                        <TableCell className="tablecell"><Button color="warning" variant="contained">Update</Button>&nbsp;<Button color="error" variant="contained" onClick={()=>{deleteuser(data._id)}}>Delete</Button></TableCell>
+                        <TableCell><Button color="warning" variant="contained">Update</Button>&nbsp;&nbsp;&nbsp;<Button color="error" variant="contained" onClick={()=>{deleteuser(data._id)}}>Delete</Button></TableCell>
                     </TableRow>
                 })}
             </TableBody>

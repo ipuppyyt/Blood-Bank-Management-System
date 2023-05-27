@@ -117,7 +117,6 @@ var transporter = nodemailer.createTransport({
 
 app.post('/user/new/adminverification', async (req, res) => {
     const request = await new adminVerified(req.body);
-    const userEmail = await new pendingVerification(req.body.userEmail);
     console.log(userEmail.userEmail);
     const category = req.body.category;
     request.save();

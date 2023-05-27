@@ -108,8 +108,8 @@ var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'dhanush6102002@gmail.com',
-    pass: 'hpdrksfyvsbhndvl'
+    user: 'youremail@gmail.com',
+    pass: 'yourpassword'
   }
 });
 
@@ -120,6 +120,7 @@ app.post('/user/new/adminverification', async (req, res) => {
     const userEmail = await userData.findOne({ userEmail: req.body.userEmail });
     const category = req.body.category;
     request.save();
+<<<<<<< HEAD
     var mailOptions = {
         from: 'dhanush6102002@gmail.com',
         to: `${userEmail.userEmail}`,
@@ -134,13 +135,10 @@ app.post('/user/new/adminverification', async (req, res) => {
           console.log('Email sent: ' + info.response);
         }
       });
+=======
+>>>>>>> parent of 47fcf3f (Update index.js)
     res.send("User Accepted.")
 })
-
-
-
-
-
 
 // ******************** Admin Delete From Admin Verified **************************************
 app.post('/admin/delete/adminverified', async (req, res) => {

@@ -19,6 +19,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import Badge from '@mui/material/Badge';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -184,7 +185,7 @@ const Navatar = () => {
       let retnav = (<div><div className="dash-btn-left"><Link to="/admin/requests"><Button style={{ backgroundColor: blue[500], fontWeight: "bolder" }} variant="contained">
         <Badge badgeContent={countofpending} color="primary" />
         &nbsp;&nbsp;&nbsp;Requests</Button></Link>
-      &nbsp;&nbsp;<Link to="/admin/adddonor"><Button style={{ backgroundColor: blue[500], fontWeight: "bolder" }} variant="contained">Add Donor</Button></Link>&nbsp;&nbsp;</div><div className="dash-avatarr">
+      &nbsp;&nbsp;<Link to="/admin/adddonor"><Button style={{ backgroundColor: blue[500], fontWeight: "bolder" }} variant="contained"><AddCircleIcon  style={{ fontSize: "medium" }} />&nbsp;Add Donor</Button></Link>&nbsp;&nbsp;</div><div className="dash-avatarr">
         <React.Fragment>
           <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
             <Tooltip title="Account">

@@ -108,8 +108,8 @@ var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'youremail@gmail.com',
-    pass: 'yourpassword'
+    user: 'dhanush6102002@gmail.com',
+    pass: 'hpdrksfyvsbhndvl'
   }
 });
 
@@ -118,8 +118,27 @@ var transporter = nodemailer.createTransport({
 app.post('/user/new/adminverification', async (req, res) => {
     const request = await new adminVerified(req.body);
     request.save();
+    var mailOptions = {
+        from: 'dhanush6102002@gmail.com',
+        to: 'dhanushsofficial@gmail.com',
+        subject: 'Sending Email using Node.js',
+        text: 'That was easy!'
+      };
+      
+      transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+        }
+      });
     res.send("User Accepted.")
 })
+
+
+
+
+
 
 // ******************** Admin Delete From Admin Verified **************************************
 app.post('/admin/delete/adminverified', async (req, res) => {

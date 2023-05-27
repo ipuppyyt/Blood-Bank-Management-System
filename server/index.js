@@ -99,6 +99,22 @@ app.post('/user/delete/pendingverification', async (req, res) => {
 
 
 // ******************** Admin Accept And Delete From Pending Verification **************************************
+
+
+
+
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'youremail@gmail.com',
+    pass: 'yourpassword'
+  }
+});
+
+
+
 app.post('/user/new/adminverification', async (req, res) => {
     const request = await new adminVerified(req.body);
     request.save();

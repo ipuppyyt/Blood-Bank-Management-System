@@ -184,7 +184,7 @@ const Navatar = () => {
       let retnav = (<div><div className="dash-btn-left"><Link to="/admin/requests"><Button style={{ backgroundColor: blue[500], fontWeight: "bolder" }} variant="contained">
         <Badge badgeContent={countofpending} color="primary" />
         &nbsp;&nbsp;&nbsp;Requests</Button></Link>
-      &nbsp;&nbsp;</div><div className="dash-avatarr">
+      &nbsp;&nbsp;<Link to="/admin/adddonor"><Button style={{ backgroundColor: blue[500], fontWeight: "bolder" }} variant="contained">Add Donor</Button></Link>&nbsp;&nbsp;</div><div className="dash-avatarr">
         <React.Fragment>
           <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
             <Tooltip title="Account">

@@ -257,6 +257,10 @@ const Navatar = () => {
             }}
             transformOrigin={{ horizontal: "right", vertical: "top" }}
             anchorOrigin={{ horizontal: "right", vertical: "bottom" }}>
+              <MenuItem disabled>
+                  <ListItemIcon><AccountCircleIcon /></ListItemIcon>{loggedInadminName}
+            </MenuItem>
+            <Divider />
             <MenuItem onClick={logoutfn}>
               <ListItemIcon><LogoutIcon fontSize="small" /></ListItemIcon>Logout
             </MenuItem>

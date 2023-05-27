@@ -117,12 +117,14 @@ var transporter = nodemailer.createTransport({
 
 app.post('/user/new/adminverification', async (req, res) => {
     const request = await new adminVerified(req.body);
+    const userEmail = await userData.findOne({ userEmail: req.body.userEmail });
+    const category = req.body.category;
     request.save();
     var mailOptions = {
         from: 'dhanush6102002@gmail.com',
-        to: 'dhanushsofficial@gmail.com',
-        subject: 'Sending Email using Node.js',
-        text: 'That was easy!'
+        to: `${userEmail.userEmail}`,
+        subject: 'Approval of your request',
+        text: `Your request has been approved to be a  ${category}.`
       };
       
       transporter.sendMail(mailOptions, function(error, info){

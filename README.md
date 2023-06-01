@@ -17,6 +17,11 @@ npm i
 ```
 npm start
 ```
+
+### Pending
+
+- [x] Admin Update
+
 ### Badges
 ------------
 <!-- ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ipuppyyt/Blood-Bank-Management-System?color=r&label=Code%20Size&style=for-the-badge) ![GitHub Repo stars](https://img.shields.io/github/stars/ipuppyyt/Blood-Bank-Management-System?color=r&style=for-the-badge) -->

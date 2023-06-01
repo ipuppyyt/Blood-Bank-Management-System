@@ -20,7 +20,7 @@ npm start
 
 ### Pending
 
-- [x] Admin Update
+- [ ] Admin Update
 
 ### Badges
 ------------
